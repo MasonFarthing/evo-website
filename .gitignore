@@ -1,0 +1,29 @@
+# Node dependencies
+node_modules/
+
+# Next.js build output
+.next/
+
+# Build caches
+.turbo/
+.cache/
+
+# Production build or static export folders
+dist/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variable files
+.env*
+
+# Mac / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Misc
+*.log 
