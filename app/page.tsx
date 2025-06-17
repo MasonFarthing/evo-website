@@ -17,6 +17,8 @@ import {
   CheckCircle,
   Globe,
   Smartphone,
+  Database,
+  TrendingUp,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -138,11 +140,12 @@ export default function EvoLandingPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-3xl"></div>
                 <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
-                    alt="Evo Platform Dashboard"
-                    width={600}
-                    height={400}
+                    src="/demo.png"
+                    alt="Evo Platform Demo"
+                    width={660}
+                    height={440}
                     className="rounded-2xl w-full"
+                    priority
                   />
                 </div>
               </div>
@@ -154,26 +157,21 @@ export default function EvoLandingPage() {
       {/* Features Section */}
       <section id="features" className="py-20 bg-slate-900/50">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-blue-600/20 text-blue-400 border-blue-600/30">Natural Greatness Cultivation</Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-white">Building Tomorrow's Creators, Today</h2>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Marc Andreessen + Peter Thiel + elite therapist for $20/month. We build personal dream accelerators - 
-              your curiosity, amplified. Exponential development through growth partnerships.
-            </p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-white">State Of The Art Human Evolution Tools</h2>
           </div>
 
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             {/* Left side - Logo/Image (1/3 width) */}
             <div className="lg:col-span-4 flex justify-start -ml-24 lg:-ml-32">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl w-[500px] h-[500px]"></div>
-                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/30 rounded-full p-16 w-[500px] h-[500px] flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl w-[400px] h-[400px]"></div>
+                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/30 rounded-full p-12 w-[400px] h-[400px] flex items-center justify-center">
                   <Image
                     src="/logo.png"
                     alt="Evo Logo"
-                    width={800}
-                    height={800}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -187,9 +185,9 @@ export default function EvoLandingPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mb-4">
                   <Brain className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-white">Potential Unleashing</CardTitle>
+                <CardTitle className="text-white">AI Mentor</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Natural guidance restoration - discovering, building, creating without limits. Every explorer, builder, dreamer gets uncapped potential.
+                  imagine having tiger woods golf coach or lebron james as you mentor, well now you can with your personal AI mentor, providing 24/7 state of the art guidence to unlock your full potential.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -199,21 +197,9 @@ export default function EvoLandingPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mb-4">
                   <BookOpen className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-white">Exponential Development</CardTitle>
+                <CardTitle className="text-white">AI Learning</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Potential acceleration through skill cultivation. Give a 10-year-old elite guidance - by 20, they'll outperform doctors with 10+ years experience.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-white">Growth Partnerships</CardTitle>
-                <CardDescription className="text-slate-400">
-                  Your AI growth partner knows every creator, builder, explorer, dreamer inside you. Guides your transformation at the highest level.
+                  A system that learns with you, constantly updating its knowledge and approach to match your unique learning style and knowledge threshold.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -223,9 +209,9 @@ export default function EvoLandingPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-white">Growth Amplification</CardTitle>
+                <CardTitle className="text-white">Adaptability</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Every edtech company still follows the same broken system. Evo rewrites the rules of becoming who you want to be.
+                  Seamlessly adapts to your goals, from creative projects to scientific research, providing the right tools at the right time.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -233,11 +219,11 @@ export default function EvoLandingPage() {
             <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mb-4">
-                  <Globe className="h-6 w-6 text-white" />
+                  <Database className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-white">Lifelong Dream Partner</CardTitle>
+                <CardTitle className="text-white">Memory</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Not just for school - your visionmaxxing journey from age 5 to 95. Evolve constantly with your AI guide by your side.
+                  Remembers your journey, conversations, and progress, creating a personalized and continuous growth experience.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -245,11 +231,11 @@ export default function EvoLandingPage() {
             <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mb-4">
-                  <Smartphone className="h-6 w-6 text-white" />
+                  <TrendingUp className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-white">Dream Acceleration</CardTitle>
+                <CardTitle className="text-white">Scaled Output</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Every single kid has a dream. Moses and Abraham's journey lives in everyone - we just pour gasoline on the fire inside.
+                  Amplify your creative and intellectual output, helping you produce more, faster, and at a higher quality than ever before.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -261,14 +247,14 @@ export default function EvoLandingPage() {
       {/* Our Vision Section */}
       <section id="vision" className="py-20">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-1 gap-12 items-center">
             <div className="space-y-6">
               <Badge className="bg-blue-600/20 text-blue-400 border-blue-600/30">Our Vision</Badge>
               <h2 className="text-3xl lg:text-5xl font-bold text-white">
                 A World Where Every Dream Becomes Reality
               </h2>
               <p className="text-lg bg-gradient-to-r from-slate-300 via-slate-200 to-white bg-clip-text text-transparent leading-relaxed">
-                We envision a future where the industrial education system becomes obsolete. Where every creator, builder, explorer, and dreamer has access to exponential growth through AI mentorship that rivals the world's elite advisors. This isn't just about learning - it's about unleashing the Moses and Abraham journey that lives within everyone.
+                We envision a future where the industrial education system becomes obsolete. Where every kid, creator, builder, explorer, and dreamer has access to exponential growth through AI mentorship that rivals the world's elite advisors. This isn't just about learning - it's about unleashing the god given unlimited human potential thats inside everybody.
               </p>
 
               <div className="space-y-4">
@@ -294,19 +280,6 @@ export default function EvoLandingPage() {
                 Join Our Vision
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-3xl"></div>
-              <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Vision of the future of human potential"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl"
-                />
-              </div>
             </div>
           </div>
         </div>

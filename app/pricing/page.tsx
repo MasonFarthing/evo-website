@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -18,8 +21,15 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { WaitlistDialog } from "@/components/waitlist-dialog"
 
 export default function PricingPage() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+  const openWaitlist = () => {
+    setIsDialogOpen(true)
+  }
+
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
       {/* Space Background Effects */}
@@ -44,16 +54,7 @@ export default function PricingPage() {
         <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-2 flex items-center justify-center">
-                <Image
-                  src="/logo.png"
-                  alt="Evo Logo"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <svg viewBox="0 0 170 80" className="w-16 h-10" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 170 80" className="w-20 h-12" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="quantumShellPricingFooter" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style={{stopColor:"#00ffff", stopOpacity:1}} />
@@ -113,34 +114,18 @@ export default function PricingPage() {
             <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-slate-800">
               Sign In
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
+            <Button 
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+              onClick={openWaitlist}
+            >
               Get Started
             </Button>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-6 relative">
-          <div className="text-center max-w-4xl mx-auto space-y-8">
-            <Badge className="bg-blue-600/20 text-blue-400 border-blue-600/30">Pricing Plans</Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-              <span className="text-white">Choose Your</span>
-              <br />
-              <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">
-                Growth Journey
-              </span>
-            </h1>
-            <p className="text-xl lg:text-2xl bg-gradient-to-r from-slate-300 via-slate-200 to-white bg-clip-text text-transparent leading-relaxed">
-              Elite mentorship for every creator, builder, explorer, and dreamer. Start your exponential development journey today.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Cards */}
-      <section className="py-20">
+      <section className="py-32">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
@@ -188,7 +173,10 @@ export default function PricingPage() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white mt-auto">
+                <Button 
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white mt-auto"
+                  onClick={openWaitlist}
+                >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -245,7 +233,10 @@ export default function PricingPage() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white mt-auto">
+                <Button 
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white mt-auto"
+                  onClick={openWaitlist}
+                >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -296,7 +287,10 @@ export default function PricingPage() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-auto">
+                <Button 
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-auto"
+                  onClick={openWaitlist}
+                >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -307,6 +301,9 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Waitlist Dialog */}
+      <WaitlistDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
+      
       {/* Add-ons Section */}
       <section className="py-20 bg-black relative overflow-hidden">
         {/* Background Effects */}
