@@ -12,13 +12,16 @@ const supabaseAnon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 // every sub-domain of evo6b.xyz (e.g. dashboard.evo6b.xyz).
 const cookieStorage = {
   getItem: (key: string) => Cookies.get(key) ?? null,
-  setItem: (key: string, value: string) =>
+  setItem: (key: string, value: string) => {
     Cookies.set(key, value, {
       domain: ".evo6b.xyz",
       secure: true,
       sameSite: "lax",
-    }),
-  removeItem: (key: string) => Cookies.remove(key, { domain: ".evo6b.xyz" }),
+    })
+  },
+  removeItem: (key: string) => {
+    Cookies.remove(key, { domain: ".evo6b.xyz" })
+  },
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnon, {
