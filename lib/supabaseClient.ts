@@ -17,10 +17,12 @@ const cookieStorage = {
       domain: ".evo6b.xyz",
       secure: true,
       sameSite: "lax",
+      path: "/",
+      expires: 365,
     })
   },
   removeItem: (key: string) => {
-    Cookies.remove(key, { domain: ".evo6b.xyz" })
+    Cookies.remove(key, { domain: ".evo6b.xyz", path: "/" })
   },
 }
 
