@@ -45,8 +45,14 @@ export default function SignInPage() {
       return
     }
 
-    setIsSubmitting(false)
-    window.location.href = "https://dashboard.evo6b.xyz"
+    // Wait for Supabase to persist the session (it triggers a SIGNED_IN event)
+    const { data: listener } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN") {
+        listener.subscription.unsubscribe()
+        setIsSubmitting(false)
+        window.location.href = "https://dashboard.evo6b.xyz"
+      }
+    })
   }
 
   return (
