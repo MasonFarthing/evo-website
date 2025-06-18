@@ -46,7 +46,7 @@ export default function SignInPage() {
     }
 
     setIsSubmitting(false)
-    setIsSuccess(true)
+    window.location.href = "https://dashboard.domain.xyz"
   }
 
   return (

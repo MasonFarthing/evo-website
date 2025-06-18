@@ -7,4 +7,20 @@ import { createClient } from "@supabase/supabase-js"
 export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-) 
+)
+
+export async function signInWithEmail(email: string) {
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      // This URL must be allowed in your Supabase dashboard → Authentication → URL Configuration
+      emailRedirectTo: "https://dashboard.domain.xyz",
+    },
+  })
+
+  if (error) {
+    console.error("Login failed:", error.message)
+  } else if (typeof window !== "undefined") {
+    alert("Check your email for the magic link!")
+  }
+} 
