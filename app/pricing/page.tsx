@@ -111,14 +111,14 @@ export default function PricingPage() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-slate-800">
-              Sign In
+            <Button variant="ghost" asChild className="text-slate-300 hover:text-white hover:bg-slate-800">
+              <Link href="/signin">Sign In</Link>
             </Button>
             <Button 
+              asChild
               className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
-              onClick={openWaitlist}
             >
-              Get Started
+              <Link href="/signup">Get Started</Link>
             </Button>
           </div>
         </div>
@@ -174,11 +174,13 @@ export default function PricingPage() {
                 </div>
 
                 <Button 
+                  asChild
                   className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white mt-auto"
-                  onClick={openWaitlist}
                 >
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="/signup">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardHeader>
             </Card>
@@ -234,11 +236,13 @@ export default function PricingPage() {
                 </div>
 
                 <Button 
+                  asChild
                   className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white mt-auto"
-                  onClick={openWaitlist}
                 >
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="/signup">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardHeader>
             </Card>
@@ -288,11 +292,13 @@ export default function PricingPage() {
                 </div>
 
                 <Button 
+                  asChild
                   className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-auto"
-                  onClick={openWaitlist}
                 >
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="/signup">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardHeader>
             </Card>

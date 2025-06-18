@@ -107,11 +107,11 @@ export default function EvoLandingPage() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-slate-800">
-              Sign In
+            <Button variant="ghost" asChild className="text-slate-300 hover:text-white hover:bg-slate-800">
+              <Link href="/signin">Sign In</Link>
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
-              Get Started
+            <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
+              <Link href="/signup">Get Started</Link>
             </Button>
           </div>
         </div>
