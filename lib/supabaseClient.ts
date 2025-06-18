@@ -14,7 +14,7 @@ export async function signInWithEmail(email: string) {
     email,
     options: {
       // This URL must be allowed in your Supabase dashboard → Authentication → URL Configuration
-      emailRedirectTo: "https://dashboard.domain.xyz",
+      emailRedirectTo: "https://dashboard.evo6b.xyz",
     },
   })
 
