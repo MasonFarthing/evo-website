@@ -87,11 +87,11 @@ export default function SignUpPage() {
       <div className="min-h-screen flex">
         {/* Left Half - White Background with Form Content */}
         <div className="w-full lg:w-1/2 bg-white flex items-center justify-center">
-          <div className="max-w-3xl w-full px-12 py-16 lg:py-24">
+          <div className="max-w-3xl w-full px-6 sm:px-10 md:px-12 py-4 sm:py-6 lg:py-8">
             {/* Logo at top */}
-            <div className="flex justify-center lg:justify-start mb-8">
+            <div className="flex justify-center lg:justify-start mb-4">
               <Link href="/" className="flex items-center space-x-2">
-                <svg viewBox="0 0 170 80" className="w-24 h-14" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 170 80" className="w-20 h-12" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <linearGradient id="quantumShell" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" style={{stopColor:"#00ffff", stopOpacity:1}} />
@@ -135,49 +135,49 @@ export default function SignUpPage() {
             {/* Creative form layout */}
             <div>
               {/* Large decorative header with animated elements */}
-              <div className="relative mb-16">
-                <div className="absolute -left-10 -top-10 w-36 h-36 bg-blue-50 rounded-full opacity-70"></div>
-                <div className="absolute right-10 top-16 w-24 h-24 bg-blue-100 rounded-full opacity-50"></div>
+              <div className="relative mb-6 sm:mb-8 md:mb-10">
+                <div className="absolute -left-10 -top-10 w-24 h-24 bg-blue-50 rounded-full opacity-70"></div>
+                <div className="absolute right-10 top-10 w-16 h-16 bg-blue-100 rounded-full opacity-50"></div>
                 
-                <h2 className="text-7xl text-slate-900 font-bold relative">Create</h2>
-                <h2 className="text-7xl text-slate-900 font-bold mt-2 flex items-center relative">
-                  Your <span className="relative ml-4 inline-flex">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 font-bold relative">Create</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 font-bold mt-1 flex items-center relative">
+                  Your <span className="relative ml-3 inline-flex">
                     <span className="absolute -inset-2 rounded-lg bg-blue-100"></span>
                     <span className="relative text-blue-600">Account</span>
                   </span>
                 </h2>
-                <div className="absolute -bottom-8 left-0 w-32 h-3 bg-blue-600 rounded-full"></div>
-                <div className="absolute -bottom-8 left-36 w-10 h-3 bg-blue-400 rounded-full"></div>
+                <div className="absolute -bottom-4 md:-bottom-5 left-0 w-20 md:w-24 h-1.5 md:h-2 bg-blue-600 rounded-full"></div>
+                <div className="absolute -bottom-4 md:-bottom-5 left-24 md:left-28 w-6 md:w-8 h-1.5 md:h-2 bg-blue-400 rounded-full"></div>
               </div>
               
               {isSuccess ? (
-                <div className="py-8">
-                  <div className="mb-8 mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700">
-                    <CheckCircle className="h-12 w-12 text-white" />
+                <div className="py-6">
+                  <div className="mb-6 mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700">
+                    <CheckCircle className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Welcome to Evo!</h3>
-                  <p className="text-slate-700 text-xl mb-8">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Welcome to Evo!</h3>
+                  <p className="text-slate-700 text-lg mb-6">
                     Your account has been created successfully.
                   </p>
                   <Button 
                     asChild
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg py-6 px-8 h-auto"
+                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-base py-4 px-6 h-auto"
                   >
                     <Link href="/">
                       Continue to Dashboard
-                      <ArrowRight className="ml-3 h-5 w-5" />
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-8 relative">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 relative">
                   {/* Decorative elements */}
-                  <div className="absolute right-20 top-24 w-16 h-16 bg-blue-50 rounded-full opacity-50 pointer-events-none"></div>
-                  <div className="absolute -left-10 bottom-20 w-24 h-24 bg-blue-50 rounded-full opacity-30 pointer-events-none"></div>
+                  <div className="absolute right-16 top-16 w-12 h-12 bg-blue-50 rounded-full opacity-50 pointer-events-none"></div>
+                  <div className="absolute -left-8 bottom-16 w-16 h-16 bg-blue-50 rounded-full opacity-30 pointer-events-none"></div>
                   
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-4">
                     <div className="relative">
-                      <User className="absolute left-4 top-4 h-6 w-6 text-blue-500" />
+                      <User className="absolute left-3 top-3 h-5 w-5 text-blue-500" />
                       <input
                         type="text"
                         name="name"
@@ -186,13 +186,13 @@ export default function SignUpPage() {
                         onChange={handleInputChange}
                         placeholder="Full Name"
                         required
-                        className="w-full rounded-lg border-2 border-slate-200 bg-white pl-14 py-4 text-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-16 shadow-sm"
+                        className="w-full rounded-lg border-2 border-slate-200 bg-white pl-12 py-3 text-base text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-12 shadow-sm"
                       />
                     </div>
                   </div>
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-4">
                     <div className="relative">
-                      <Mail className="absolute left-4 top-4 h-6 w-6 text-blue-500" />
+                      <Mail className="absolute left-3 top-3 h-5 w-5 text-blue-500" />
                       <input
                         type="email"
                         name="email"
@@ -201,13 +201,13 @@ export default function SignUpPage() {
                         onChange={handleInputChange}
                         placeholder="Email Address"
                         required
-                        className="w-full rounded-lg border-2 border-slate-200 bg-white pl-14 py-4 text-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-16"
+                        className="w-full rounded-lg border-2 border-slate-200 bg-white pl-12 py-3 text-base text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-12"
                       />
                     </div>
                   </div>
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-4">
                     <div className="relative">
-                      <Lock className="absolute left-4 top-4 h-6 w-6 text-blue-500" />
+                      <Lock className="absolute left-3 top-3 h-5 w-5 text-blue-500" />
                       <input
                         type="password"
                         name="password"
@@ -216,7 +216,7 @@ export default function SignUpPage() {
                         onChange={handleInputChange}
                         placeholder="Password"
                         required
-                        className="w-full rounded-lg border-2 border-slate-200 bg-white pl-14 py-4 text-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-16"
+                        className="w-full rounded-lg border-2 border-slate-200 bg-white pl-12 py-3 text-base text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-12"
                       />
                     </div>
                   </div>
@@ -226,21 +226,21 @@ export default function SignUpPage() {
                       type="checkbox"
                       id="terms"
                       required
-                      className="h-5 w-5 rounded border-slate-300 bg-white text-blue-600 focus:ring-blue-500"
+                      className="h-4 w-4 rounded border-slate-300 bg-white text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="terms" className="ml-2 text-slate-700">
+                    <label htmlFor="terms" className="ml-2 text-sm text-slate-700">
                       I agree to the <Link href="#" className="text-blue-600 hover:underline">Terms</Link> and <Link href="#" className="text-blue-600 hover:underline">Privacy Policy</Link>
                     </label>
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-xl font-semibold py-6 px-8 h-auto shadow-lg rounded-xl relative overflow-hidden"
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg font-semibold py-4 px-6 h-auto shadow-lg rounded-xl relative overflow-hidden"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin -ml-1 mr-3 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -249,15 +249,15 @@ export default function SignUpPage() {
                     ) : (
                       <>
                         Create Account
-                        <ArrowRight className="ml-3 h-5 w-5" />
+                        <ArrowRight className="ml-2 h-4 w-4" />
                       </>
                     )}
                   </Button>
                 </form>
               )}
 
-              <div className="mt-12 pt-6 border-t border-slate-200 text-center">
-                <p className="text-slate-700">
+              <div className="mt-8 pt-4 border-t border-slate-200 text-center">
+                <p className="text-slate-700 text-sm">
                   Already have an account?{" "}
                   <Link href="/signin" className="text-blue-600 hover:underline">
                     Sign In

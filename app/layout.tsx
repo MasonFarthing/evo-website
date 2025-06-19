@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Evo - Evolve Your Learning Journey',
   description: 'Transform education with AI-powered personalized learning experiences.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
 }
 
 export default function RootLayout({

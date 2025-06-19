@@ -163,10 +163,10 @@ export default function EvoLandingPage() {
 
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             {/* Left side - Logo/Image (1/3 width) */}
-            <div className="lg:col-span-4 flex justify-start -ml-24 lg:-ml-32">
+            <div className="lg:col-span-4 flex justify-center lg:justify-start lg:-ml-24 xl:-ml-32 mt-8 lg:mt-0">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl w-[400px] h-[400px]"></div>
-                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/30 rounded-full p-12 w-[400px] h-[400px] flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px]"></div>
+                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/30 rounded-full p-8 sm:p-10 md:p-12 w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] flex items-center justify-center">
                   <Image
                     src="/logo.png"
                     alt="Evo Logo"
