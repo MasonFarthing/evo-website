@@ -120,12 +120,14 @@ function createRedirectToken(session: any): string | null {
   if (!session?.access_token) return null
   
   const payload = {
-    token: session.access_token,
+    access_token: session.access_token,
+    refresh_token: session.refresh_token,
     expires_at: session.expires_at,
     issued_at: Date.now(),
-    user_id: session.user?.id,
-    refresh_token: session.refresh_token
+    user_id: session.user?.id
   }
+  
+  console.log('Creating redirect token with payload:', payload)
   
   // Base64 encode the payload (in production, you'd want to encrypt this)
   return btoa(JSON.stringify(payload))
