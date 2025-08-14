@@ -63,7 +63,7 @@ export async function secureSignOut() {
     return { success: true, error: null }
   } catch (error) {
     console.error('Sign out error:', error)
-    return { success: false, error: error.message }
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error occurred' }
   }
 }
 
