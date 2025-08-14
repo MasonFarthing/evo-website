@@ -30,11 +30,28 @@ export default function SignInPage() {
     setIsSubmitting(true)
     setError(null)
 
-    const supabase = createClient()
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: formData.email,
-      password: formData.password,
+    console.log('Starting sign in process...')
+    console.log('Environment check:', {
+      supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+      dashboardUrl: process.env.NEXT_PUBLIC_DASHBOARD_URL,
+      hasAnonKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     })
+
+    try {
+      const supabase = createClient()
+      console.log('Supabase client created')
+      
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password,
+      })
+      console.log('Sign in attempt completed:', { error: error?.message, hasSession: !!data.session })
+    } catch (err) {
+      console.error('Error during sign in:', err)
+      setError('An unexpected error occurred. Please try again.')
+      setIsSubmitting(false)
+      return
+    }
 
     if (error) {
       const userFriendlyMessage = error.message.includes('Invalid login credentials') 
