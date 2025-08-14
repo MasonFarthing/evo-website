@@ -37,14 +37,17 @@ export default function SignInPage() {
       hasAnonKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     })
 
+    let data, error
     try {
       const supabase = createClient()
       console.log('Supabase client created')
       
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const result = await supabase.auth.signInWithPassword({
         email: formData.email,
         password: formData.password,
       })
+      data = result.data
+      error = result.error
       console.log('Sign in attempt completed:', { error: error?.message, hasSession: !!data.session })
     } catch (err) {
       console.error('Error during sign in:', err)
