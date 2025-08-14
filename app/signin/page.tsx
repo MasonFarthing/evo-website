@@ -48,31 +48,24 @@ export default function SignInPage() {
       return
     }
 
-    if (error) {
-      setError('Authentication failed. Please try again.')
-      setIsSubmitting(false)
-      return
-    }
-
-    // Validate session using secure utility
-    const { user, session, isValid } = await validateSession()
-    
-    if (isValid && user && session) {
+    // If we get here, signin was successful
+    if (data.session) {
       setIsSuccess(true)
       // Small delay to show success state, then redirect securely to external dashboard
-      setTimeout(async () => {
+      setTimeout(() => {
         const dashboardUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL
         if (dashboardUrl && isValidRedirectUrl(dashboardUrl)) {
           // Create secure redirect URL with session token
-          const secureUrl = await createSecureRedirectUrl(dashboardUrl, session)
-          window.location.href = secureUrl
+          createSecureRedirectUrl(dashboardUrl, data.session).then(secureUrl => {
+            window.location.href = secureUrl
+          })
         } else {
           setError('Dashboard URL configuration error.')
           setIsSubmitting(false)
         }
       }, 1500)
     } else {
-      setError('Session validation failed. Please try again.')
+      setError('Authentication failed. Please try again.')
       setIsSubmitting(false)
     }
   }
