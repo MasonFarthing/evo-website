@@ -52,16 +52,27 @@ export default function SignInPage() {
     if (data.session) {
       setIsSuccess(true)
       // Small delay to show success state, then redirect securely to external dashboard
-      setTimeout(() => {
+      setTimeout(async () => {
         const dashboardUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL
+        console.log('Dashboard URL:', dashboardUrl) // Debug log
+        
         if (dashboardUrl && isValidRedirectUrl(dashboardUrl)) {
-          // Create secure redirect URL with session token
-          createSecureRedirectUrl(dashboardUrl, data.session).then(secureUrl => {
+          try {
+            // Create secure redirect URL with session token
+            const secureUrl = await createSecureRedirectUrl(dashboardUrl, data.session)
+            console.log('Secure URL created:', secureUrl) // Debug log
             window.location.href = secureUrl
-          })
+          } catch (error) {
+            console.error('Redirect error:', error)
+            setError('Failed to create secure redirect. Please try again.')
+            setIsSubmitting(false)
+            setIsSuccess(false)
+          }
         } else {
+          console.error('Invalid dashboard URL:', dashboardUrl) // Debug log
           setError('Dashboard URL configuration error.')
           setIsSubmitting(false)
+          setIsSuccess(false)
         }
       }, 1500)
     } else {

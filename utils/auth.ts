@@ -89,6 +89,11 @@ export function isValidRedirectUrl(url: string): boolean {
 
 export async function createSecureRedirectUrl(baseUrl: string, session: any): Promise<string> {
   try {
+    // Validate baseUrl before attempting to create URL
+    if (!baseUrl || typeof baseUrl !== 'string') {
+      throw new Error('Invalid baseUrl provided')
+    }
+    
     const url = new URL(baseUrl)
     
     // Add encrypted session token as a secure parameter
@@ -105,7 +110,7 @@ export async function createSecureRedirectUrl(baseUrl: string, session: any): Pr
     
     return url.toString()
   } catch (error) {
-    console.error('Error creating secure redirect URL:', error)
+    console.error('Error creating secure redirect URL:', error, 'baseUrl:', baseUrl)
     return baseUrl
   }
 }
