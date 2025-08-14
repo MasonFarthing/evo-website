@@ -24,7 +24,6 @@ export function WaitlistDialog({ isOpen, onClose }: WaitlistDialogProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // In a real app, you would send this to your backend
-    console.log("Waitlist email submitted:", email)
     setSubmitted(true)
   }
 
