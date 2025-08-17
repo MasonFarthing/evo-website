@@ -77,6 +77,9 @@ export default function EvoLandingPage() {
             <Link href="#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Our Mission
             </Link>
+            <Link href="#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              Deep Dive
+            </Link>
             <Link href="#resources" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Resources
             </Link>
@@ -90,7 +93,7 @@ export default function EvoLandingPage() {
             <Button variant="ghost" asChild className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent hover:border-blue-300">
               <Link href="/signin">Sign In</Link>
             </Button>
-            <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25">
+            <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
               <Link href="/signup">
                 Get Started
               </Link>
@@ -113,23 +116,17 @@ export default function EvoLandingPage() {
                   </span>
                 </h1>
                 
-                <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                  We fuel the fire inside every kid, visionary, creator, and founder by providing the tools to make anything possible, and enable 
-                  <span className="text-blue-600 font-semibold"> exponential human growth</span>.
+                <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
+                  Humanity knows remarkably little about how human potential works, leaving us unable to educate people effectively. Solving this critical gap is essential to supercharging human flourishing and advancement.
                 </p>
               </div>
 
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25 px-8 py-4">
-                  <Rocket className="mr-2 h-5 w-5" />
+              {/* CTA Button */}
+              <div className="flex justify-center">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25 px-12 py-6 text-xl rounded-full">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 px-8 py-4">
-                  <Play className="mr-2 h-5 w-5" />
-                  View Demo
                 </Button>
               </div>
             </div>
@@ -141,18 +138,12 @@ export default function EvoLandingPage() {
       <section id="mission" className="relative bg-gradient-to-br from-gray-100 via-slate-100 to-blue-100 min-h-screen">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="pt-16 pb-8">
+            <div className="pt-16 pb-12">
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
-                  Our mission is to reimagine education
+                  Our Mission
                 </span>
               </h2>
-            </div>
-            
-            <div className="pb-12">
-              <h3 className="text-2xl lg:text-3xl font-semibold text-slate-700">
-                We believe 10x better outcomes and 10x better education is possible
-              </h3>
             </div>
             
             {/* Document Outline Placeholder */}
@@ -164,6 +155,35 @@ export default function EvoLandingPage() {
             {/* Space for additional content */}
             <div className="text-xl text-slate-700 leading-relaxed pb-16">
               {/* Additional content can go here */}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deep Dive Section */}
+      <section id="deep-dive" className="py-32 relative bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid lg:grid-cols-7 gap-8 items-start">
+            {/* Left Column - Title and Subtitle */}
+            <div className="lg:col-span-2">
+              <h2 className="text-5xl lg:text-6xl font-bold text-slate-800 mb-6">
+                <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Deep Dive</span>
+              </h2>
+              <p className="text-xl text-slate-600">
+                Explore comprehensive analyses, detailed methodologies, and cutting-edge research that powers our mission
+              </p>
+            </div>
+            
+            {/* Right Column - Content Area */}
+            <div className="lg:col-span-5 relative">
+              <div className="border-2 border-black rounded-lg p-8 min-h-[600px]">
+                {/* Articles will go here */}
+              </div>
+              
+              {/* Next Tab Arrow */}
+              <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-white border-2 border-black rounded-full p-3 hover:bg-gray-50 transition-colors">
+                <ArrowRight className="h-6 w-6 text-black" />
+              </button>
             </div>
           </div>
         </div>
