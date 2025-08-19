@@ -50,19 +50,20 @@ export default function PricingPage() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-radial from-cyan-600/10 via-blue-600/5 to-transparent rounded-full blur-3xl"></div>
 
       {/* Header */}
-      <header className="border-b border-slate-800/50 backdrop-blur-sm bg-slate-950/80 sticky top-0 z-50">
-        <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+      <header className="border-b border-blue-200 backdrop-blur-sm bg-white/90 sticky top-0 z-50">
+        <div className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between">
+          {/* Logo with enhanced glow */}
           <div className="flex items-center space-x-2">
             <Link href="/" className="flex items-center space-x-2">
-              <svg viewBox="0 0 170 80" className="w-20 h-12" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 170 80" className="w-24 h-14" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="quantumShellPricingFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="quantumShell" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style={{stopColor:"#00ffff", stopOpacity:1}} />
                     <stop offset="50%" style={{stopColor:"#0080ff", stopOpacity:1}} />
-                    <stop offset="100%" style={{stopColor:"#8000ff", stopOpacity:1}} />
+                    <stop offset="100%" style={{stopColor:"#0040ff", stopOpacity:1}} />
                   </linearGradient>
                   
-                  <filter id="stellarGlowPricingFooter" x="-100%" y="-100%" width="300%" height="300%">
+                  <filter id="stellarGlow" x="-100%" y="-100%" width="300%" height="300%">
                     <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
                     <feMerge>
                       <feMergeNode in="coloredBlur"/>
@@ -71,23 +72,23 @@ export default function PricingPage() {
                   </filter>
                 </defs>
                 
-                <g filter="url(#stellarGlowPricingFooter)" transform="translate(-180, -210)">
+                <g filter="url(#stellarGlow)" transform="translate(-180, -210)">
                   <g transform="translate(180, 250)">
-                    <rect x="0" y="-25" width="30" height="6" fill="url(#quantumShellPricingFooter)"/>
-                    <rect x="0" y="-5" width="24" height="5" fill="url(#quantumShellPricingFooter)"/>
-                    <rect x="0" y="18" width="30" height="6" fill="url(#quantumShellPricingFooter)"/>
-                    <rect x="0" y="-25" width="6" height="49" fill="url(#quantumShellPricingFooter)"/>
+                    <rect x="0" y="-30" width="35" height="8" fill="url(#quantumShell)"/>
+                    <rect x="0" y="-6" width="28" height="6" fill="url(#quantumShell)"/>
+                    <rect x="0" y="22" width="35" height="8" fill="url(#quantumShell)"/>
+                    <rect x="0" y="-30" width="8" height="60" fill="url(#quantumShell)"/>
                   </g>
                   
-                  <g transform="translate(220, 250)">
-                    <polygon points="0,-25 5,-25 15,24 10,24" fill="url(#quantumShellPricingFooter)"/>
-                    <polygon points="27,-25 32,-25 22,24 15,24" fill="url(#quantumShellPricingFooter)"/>
+                  <g transform="translate(230, 250)">
+                    <polygon points="0,-30 6,-30 18,30 12,30" fill="url(#quantumShell)"/>
+                    <polygon points="32,-30 38,-30 26,30 18,30" fill="url(#quantumShell)"/>
                   </g>
                   
-                  <g transform="translate(270, 250)">
-                    <circle cx="16" cy="0" r="23" fill="none" stroke="url(#quantumShellPricingFooter)" strokeWidth="6"/>
-                    <circle cx="16" cy="0" r="12" fill="none" stroke="url(#quantumShellPricingFooter)" strokeWidth="2" opacity="0.7">
-                      <animate attributeName="r" values="12;15;12" dur="4s" repeatCount="indefinite"/>
+                  <g transform="translate(290, 250)">
+                    <circle cx="19" cy="0" r="28" fill="none" stroke="url(#quantumShell)" strokeWidth="8"/>
+                    <circle cx="19" cy="0" r="15" fill="none" stroke="url(#quantumShell)" strokeWidth="2" opacity="0.7">
+                      <animate attributeName="r" values="15;18;15" dur="4s" repeatCount="indefinite"/>
                     </circle>
                   </g>
                 </g>
@@ -95,30 +96,31 @@ export default function PricingPage() {
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/#features" className="text-slate-300 hover:text-blue-400 transition-colors">
-              Features
+          {/* Navigation with tech styling */}
+          <nav className="hidden md:flex items-center justify-center flex-1 space-x-16">
+            <Link href="/#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              Our Mission
             </Link>
-            <Link href="/#about" className="text-slate-300 hover:text-blue-400 transition-colors">
-              About
+            <Link href="/#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              Deep Dive
             </Link>
-            <Link href="/pricing" className="text-blue-400 font-medium">
+            <Link href="/#resources" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              Resources
+            </Link>
+            <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Pricing
-            </Link>
-            <Link href="/#contact" className="text-slate-300 hover:text-blue-400 transition-colors">
-              Contact
             </Link>
           </nav>
 
+          {/* CTA Buttons */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" asChild className="text-slate-300 hover:text-white hover:bg-slate-800">
+            <Button variant="ghost" asChild className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent hover:border-blue-300">
               <Link href="/signin">Sign In</Link>
             </Button>
-            <Button 
-              asChild
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
-            >
-              <Link href="/signup">Get Started</Link>
+            <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              <Link href="/signup">
+                Get Started
+              </Link>
             </Button>
           </div>
         </div>
