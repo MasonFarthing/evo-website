@@ -177,7 +177,18 @@ export default function EvoLandingPage() {
             {/* Right Column - Content Area */}
             <div className="lg:col-span-5 relative">
               <div className="border-2 border-black rounded-lg p-8 min-h-[600px]">
-                {/* Articles will go here */}
+                {/* Articles Grid - 3x3 Layout */}
+                <div className="grid grid-cols-3 gap-6 h-full">
+                  {/* Article 1 - Top Left */}
+                  <Link href="https://t.co/zJ8fNDWAwj" target="_blank" rel="noopener noreferrer" className="group cursor-pointer">
+                    <div className="h-full hover:text-blue-600 transition-colors duration-300">
+                      <h3 className="text-lg font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors font-serif" style={{transform: 'scaleY(1.5)'}}>
+                        Why we stopped making einsteins
+                      </h3>
+                    </div>
+                  </Link>
+                  
+                </div>
               </div>
               
               {/* Next Tab Arrow */}
@@ -190,222 +201,75 @@ export default function EvoLandingPage() {
       </section>
 
       {/* Resources Section */}
-      <section id="resources" className="py-32 relative bg-gradient-to-br from-blue-50 to-slate-100">
-        <div className="container mx-auto px-4 lg:px-6">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="flex items-center justify-center mb-6">
-              <BookOpen className="w-6 h-6 text-blue-600 mr-3" />
-              <span className="text-blue-600 text-sm uppercase tracking-wider font-medium">Knowledge Hub</span>
-              <BookOpen className="w-6 h-6 text-blue-600 ml-3" />
-            </div>
-            <h2 className="text-5xl lg:text-6xl font-bold text-slate-800 mb-6">
-              Resources &
-              <br />
-              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Learning Materials</span>
+      <section id="resources" className="pt-16 pb-16 relative bg-gradient-to-br from-blue-50 to-slate-100 min-h-[460vh]">
+        <div className="container mx-auto px-4 lg:px-6 h-full">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl lg:text-6xl font-bold text-slate-800">
+              Resources
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Access our comprehensive library of guides, tutorials, and tools to accelerate your growth journey
-            </p>
           </div>
-
-          {/* Resources Grid */}
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Getting Started Guide */}
-            <div className="group relative">
-              <div className="relative bg-white border border-blue-200 rounded-2xl p-8 hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6">
-                  <Rocket className="h-8 w-8 text-white" />
+          
+          <div className="flex flex-col h-full space-y-0">
+            {/* Top black line */}
+            <div className="w-full h-1 bg-black"></div>
+            
+            {/* Section 1 */}
+            <div className="flex-1 flex flex-col justify-center items-center py-80">
+              <div className="max-w-md w-full">
+                <div className="group cursor-pointer">
+                  <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 h-32 flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:scale-105 hover:bg-gradient-to-br hover:from-blue-50 hover:to-white">
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-bold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
+                        Find a Mentor
+                      </h3>
+                      <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                        Tool to connect with mentors who have real experience and cultivated experience
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Getting Started Guide</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Complete beginner's guide to unlock your potential with step-by-step instructions and best practices.
-                </p>
-                <Link href="/guide" className="text-blue-600 hover:text-blue-700 font-semibold flex items-center">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
               </div>
             </div>
-
-            {/* Video Tutorials */}
-            <div className="group relative">
-              <div className="relative bg-white border border-blue-200 rounded-2xl p-8 hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6">
-                  <Play className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Video Tutorials</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Watch comprehensive video tutorials covering all features and advanced techniques for maximum growth.
-                </p>
-                <Link href="/tutorials" className="text-blue-600 hover:text-blue-700 font-semibold flex items-center">
-                  Watch Now <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+            
+            {/* Black line divider */}
+            <div className="w-full h-1 bg-black"></div>
+            
+            {/* Section 2 */}
+            <div className="flex-1 flex flex-col justify-center items-center py-80">
+              <div className="text-center">
+                <h3 className="text-3xl font-bold text-slate-800 mb-4">Section 2</h3>
+                <p className="text-lg text-slate-600">Content for section 2 goes here</p>
               </div>
             </div>
-
-            {/* API Documentation */}
-            <div className="group relative">
-              <div className="relative bg-white border border-blue-200 rounded-2xl p-8 hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6">
-                  <BookOpen className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">API Documentation</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Complete API reference for developers looking to integrate and build custom solutions.
-                </p>
-                <Link href="/docs" className="text-blue-600 hover:text-blue-700 font-semibold flex items-center">
-                  View Docs <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+            
+            {/* Black line divider */}
+            <div className="w-full h-1 bg-black"></div>
+            
+            {/* Section 3 */}
+            <div className="flex-1 flex flex-col justify-center items-center py-80">
+              <div className="text-center">
+                <h3 className="text-3xl font-bold text-slate-800 mb-4">Section 3</h3>
+                <p className="text-lg text-slate-600">Content for section 3 goes here</p>
               </div>
             </div>
-
-            {/* Community Forum */}
-            <div className="group relative">
-              <div className="relative bg-white border border-blue-200 rounded-2xl p-8 hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Community Forum</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Join thousands of creators sharing experiences, tips, and supporting each other's growth journey.
-                </p>
-                <Link href="/community" className="text-blue-600 hover:text-blue-700 font-semibold flex items-center">
-                  Join Community <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+            
+            {/* Black line divider */}
+            <div className="w-full h-1 bg-black"></div>
+            
+            {/* Section 4 */}
+            <div className="flex-1 flex flex-col justify-center items-center py-80">
+              <div className="text-center">
+                <h3 className="text-3xl font-bold text-slate-800 mb-4">Section 4</h3>
+                <p className="text-lg text-slate-600">Content for section 4 goes here</p>
               </div>
             </div>
-
-            {/* Success Stories */}
-            <div className="group relative">
-              <div className="relative bg-white border border-blue-200 rounded-2xl p-8 hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6">
-                  <Star className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Success Stories</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Read inspiring stories from users who transformed their lives and achieved exponential growth.
-                </p>
-                <Link href="/stories" className="text-blue-600 hover:text-blue-700 font-semibold flex items-center">
-                  Read Stories <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Support Center */}
-            <div className="group relative">
-              <div className="relative bg-white border border-blue-200 rounded-2xl p-8 hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Support Center</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Get help when you need it with our comprehensive support center and responsive help team.
-                </p>
-                <Link href="/support" className="text-blue-600 hover:text-blue-700 font-semibold flex items-center">
-                  Get Support <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
+            
+            {/* Bottom black line */}
+            <div className="w-full h-1 bg-black"></div>
           </div>
         </div>
       </section>
 
-      {/* Footer - Command Center */}
-      <footer className="bg-slate-950/90 border-t border-cyan-500/20 py-16 relative">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div className="space-y-6">
-              <Link href="/" className="flex items-center space-x-2">
-                <svg viewBox="0 0 170 80" className="w-24 h-14" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="quantumShellFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style={{stopColor:"#00ffff", stopOpacity:1}} />
-                      <stop offset="50%" style={{stopColor:"#0080ff", stopOpacity:1}} />
-                      <stop offset="100%" style={{stopColor:"#0040ff", stopOpacity:1}} />
-                    </linearGradient>
-                    
-                    <filter id="stellarGlowFooter" x="-100%" y="-100%" width="300%" height="300%">
-                      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  
-                  <g filter="url(#stellarGlowFooter)" transform="translate(-180, -210)">
-                    <g transform="translate(180, 250)">
-                      <rect x="0" y="-30" width="35" height="8" fill="url(#quantumShellFooter)"/>
-                      <rect x="0" y="-6" width="28" height="6" fill="url(#quantumShellFooter)"/>
-                      <rect x="0" y="22" width="35" height="8" fill="url(#quantumShellFooter)"/>
-                      <rect x="0" y="-30" width="8" height="60" fill="url(#quantumShellFooter)"/>
-                    </g>
-                    
-                    <g transform="translate(230, 250)">
-                      <polygon points="0,-30 6,-30 18,30 12,30" fill="url(#quantumShellFooter)"/>
-                      <polygon points="32,-30 38,-30 26,30 18,30" fill="url(#quantumShellFooter)"/>
-                    </g>
-                    
-                    <g transform="translate(290, 250)">
-                      <circle cx="19" cy="0" r="28" fill="none" stroke="url(#quantumShellFooter)" strokeWidth="8"/>
-                      <circle cx="19" cy="0" r="15" fill="none" stroke="url(#quantumShellFooter)" strokeWidth="2" opacity="0.7">
-                        <animate attributeName="r" values="15;18;15" dur="4s" repeatCount="indefinite"/>
-                      </circle>
-                    </g>
-                  </g>
-                </svg>
-              </Link>
-              <p className="text-slate-400 leading-relaxed">
-                Fueling the fire inside every creator, builder, explorer, and dreamer through exponential growth partnerships and unlimited potential unleashing.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <h3 className="text-white font-semibold text-lg uppercase tracking-wider">Systems</h3>
-              <div className="space-y-3">
-                <Link href="#features" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  Evolution Tools
-                </Link>
-                <Link href="/pricing" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  Access Levels
-                </Link>
-                <Link href="#" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  API Interface
-                </Link>
-                <Link href="#" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  Integrations
-                </Link>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <h3 className="text-white font-semibold text-lg uppercase tracking-wider">Mission</h3>
-              <div className="space-y-3">
-                <Link href="#vision" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  Our Vision
-                </Link>
-                <Link href="#" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  Research
-                </Link>
-                <Link href="#" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  Careers
-                </Link>
-                <Link href="#" className="block text-slate-400 hover:text-cyan-400 transition-colors">
-                  Contact
-                </Link>
-              </div>
-            </div>
-
-
-          </div>
-          
-          <div className="border-t border-slate-800/50 mt-12 pt-8 text-center">
-            <p className="text-slate-500 text-sm">
-              © 2024 Evo. Advancing human potential through exponential growth technology.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

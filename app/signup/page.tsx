@@ -4,11 +4,10 @@ import { useState } from "react"
 import Link from "next/link"
 import { createClient } from "@/utils/supabase/client"
 
-export default function SignUpPage() {
+export default function WaitlistPage() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    password: "",
+    email: ""
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -28,24 +27,21 @@ export default function SignUpPage() {
     setError(null)
 
     const supabase = createClient()
-    const { error } = await supabase.auth.signUp({
-      email: formData.email,
-      password: formData.password,
-      options: {
-        data: {
-          full_name: formData.name,
-        },
-      },
-    })
+    
+    const { error } = await supabase
+      .from('waitlist')
+      .insert([{ 
+        name: formData.name,
+        email: formData.email,
+        created_at: new Date().toISOString() 
+      }])
 
     if (error) {
-      const userFriendlyMessage = error.message.includes('User already registered') 
-        ? 'An account with this email already exists. Please sign in instead.'
-        : error.message.includes('Password should be')
-        ? 'Password must be at least 6 characters long.'
-        : error.message.includes('Invalid email')
+      const userFriendlyMessage = error.message.includes('duplicate key value') 
+        ? 'This email is already on our waitlist!'
+        : error.message.includes('invalid input syntax')
         ? 'Please enter a valid email address.'
-        : 'Unable to create account. Please try again later.'
+        : 'Unable to join waitlist. Please try again later.'
       
       setError(userFriendlyMessage)
       setIsSubmitting(false)
@@ -64,7 +60,7 @@ export default function SignUpPage() {
             Evo
           </Link>
           <h2 className="mt-6 text-3xl font-bold text-gray-900">
-            Create your account
+            Join the Waitlist
           </h2>
         </div>
 
@@ -76,16 +72,16 @@ export default function SignUpPage() {
 
         {isSuccess ? (
           <div className="text-center space-y-4">
-            <div className="text-green-600 text-6xl">✓</div>
-            <h3 className="text-xl font-semibold text-gray-900">Account created!</h3>
+            <div className="text-green-600 text-6xl">🎉</div>
+            <h3 className="text-xl font-semibold text-gray-900">You're on the list!</h3>
             <p className="text-gray-600">
-              Check your email to verify your account.
+              Thanks for joining our waitlist. We'll notify you as soon as Evo launches!
             </p>
             <Link 
-              href="/signin"
+              href="/"
               className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
-              Continue to Sign In
+              Back to Home
             </Link>
           </div>
         ) : (
@@ -118,36 +114,8 @@ export default function SignUpPage() {
                 onChange={handleInputChange}
                 required
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                placeholder="your@email.com"
+                placeholder="Enter your email to join the waitlist"
               />
-            </div>
-
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Create a secure password"
-              />
-            </div>
-
-            <div className="flex items-start">
-              <input
-                type="checkbox"
-                id="terms"
-                required
-                className="h-4 w-4 mt-1 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-              />
-              <label htmlFor="terms" className="ml-2 text-sm text-gray-600">
-                I agree to the <Link href="#" className="text-blue-600 hover:text-blue-500 underline">Terms of Service</Link> and <Link href="#" className="text-blue-600 hover:text-blue-500 underline">Privacy Policy</Link>
-              </label>
             </div>
 
             <button
@@ -155,14 +123,14 @@ export default function SignUpPage() {
               disabled={isSubmitting}
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
             >
-              {isSubmitting ? "Creating Account..." : "Create Account"}
+              {isSubmitting ? "Joining Waitlist..." : "Join Waitlist"}
             </button>
           </form>
         )}
 
         <div className="text-center">
           <p className="text-sm text-gray-600">
-            Already have an account?{" "}
+            Have login credentials?{" "}
             <Link href="/signin" className="font-medium text-blue-600 hover:text-blue-500">
               Sign in here
             </Link>
