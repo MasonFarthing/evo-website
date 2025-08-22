@@ -122,11 +122,17 @@ export default function EvoLandingPage() {
               </div>
 
 
-              {/* CTA Button */}
-              <div className="flex justify-center">
+              {/* CTA Buttons */}
+              <div className="flex justify-center gap-6">
                 <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25 px-12 py-6 text-xl rounded-full">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button size="lg" asChild className="bg-gradient-to-r from-gray-100 to-white hover:from-gray-200 hover:to-gray-100 text-slate-700 shadow-lg shadow-gray-300/25 px-12 py-6 text-xl rounded-full border border-gray-200 hover:border-gray-300">
+                  <Link href="/demo">
+                    Watch Demo
+                    <Play className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
               </div>
             </div>
