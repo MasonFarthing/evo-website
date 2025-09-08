@@ -101,11 +101,11 @@ export default function PricingPage() {
             <Link href="/#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Our Mission
             </Link>
+            <Link href="/#how-it-works" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              How It Works
+            </Link>
             <Link href="/#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Deep Dive
-            </Link>
-            <Link href="/#resources" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Resources
             </Link>
             <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Pricing
@@ -117,11 +117,16 @@ export default function PricingPage() {
             <Button variant="ghost" asChild className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent hover:border-blue-300">
               <Link href="/signin">Sign In</Link>
             </Button>
-            <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
-              <Link href="/signup">
-                Get Started
-              </Link>
-            </Button>
+            <div className="relative">
+              <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                <Link href="/signup">
+                  Join Waitlist
+                </Link>
+              </Button>
+              <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
+                50% OFF
+              </Badge>
+            </div>
           </div>
         </div>
       </header>
@@ -155,35 +160,32 @@ export default function PricingPage() {
                 <div className="space-y-4 flex-grow">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">AI Mentor</span>
+                    <span className="text-slate-300">Evo - 1M tokens</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">AI Learning</span>
+                    <span className="text-slate-300">Evo Learning - 1M tokens</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">All Features (add ons not included)</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Unlimited Medium Intelligence</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Optional add on purchase</span>
+                    <span className="text-slate-300">All Basic Features</span>
                   </div>
                 </div>
 
-                <Button 
-                  asChild
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white mt-auto"
-                >
-                  <Link href="/signup">
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="relative">
+                  <Button 
+                    asChild
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white mt-auto"
+                  >
+                    <Link href="/signup">
+                      Join Waitlist
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
+                    50% OFF
+                  </Badge>
+                </div>
               </CardHeader>
             </Card>
 
@@ -217,35 +219,36 @@ export default function PricingPage() {
                 <div className="space-y-4 flex-grow">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">AI Mentor</span>
+                    <span className="text-slate-300">Evo - 2.5M tokens</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">AI Learning</span>
+                    <span className="text-slate-300">Evo Learning - 2.5M tokens</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">All Features</span>
+                    <span className="text-slate-300">All Basic Features</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Add on bundle</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Unlimited Medium Intelligence</span>
+                    <span className="text-slate-300">Advanced Features</span>
                   </div>
                 </div>
 
-                <Button 
-                  asChild
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white mt-auto"
-                >
-                  <Link href="/signup">
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="relative">
+                  <Button 
+                    asChild
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white mt-auto"
+                  >
+                    <Link href="/signup">
+                      Join Waitlist
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
+                    50% OFF
+                  </Badge>
+                </div>
               </CardHeader>
             </Card>
 
@@ -273,35 +276,36 @@ export default function PricingPage() {
                 <div className="space-y-4 flex-grow">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">AI Mentor</span>
+                    <span className="text-slate-300">Evo - 5M tokens</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">AI Learning</span>
+                    <span className="text-slate-300">Evo Learning - 5M tokens</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">All Features</span>
+                    <span className="text-slate-300">All Basic Features</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">Add on bundle</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">Unlimited Max Intelligence</span>
+                    <span className="text-slate-300">Advanced Features</span>
                   </div>
                 </div>
 
-                <Button 
-                  asChild
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-auto"
-                >
-                  <Link href="/signup">
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="relative">
+                  <Button 
+                    asChild
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-auto"
+                  >
+                    <Link href="/signup">
+                      Join Waitlist
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
+                    50% OFF
+                  </Badge>
+                </div>
               </CardHeader>
             </Card>
 

@@ -77,11 +77,11 @@ export default function EvoLandingPage() {
             <Link href="#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Our Mission
             </Link>
+            <Link href="#how-it-works" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              How It Works
+            </Link>
             <Link href="#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Deep Dive
-            </Link>
-            <Link href="#resources" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Resources
             </Link>
             <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Pricing
@@ -93,11 +93,16 @@ export default function EvoLandingPage() {
             <Button variant="ghost" asChild className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent hover:border-blue-300">
               <Link href="/signin">Sign In</Link>
             </Button>
-            <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
-              <Link href="/signup">
-                Get Started
-              </Link>
-            </Button>
+            <div className="relative">
+              <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                <Link href="/signup">
+                  Join Waitlist
+                </Link>
+              </Button>
+              <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
+                50% OFF
+              </Badge>
+            </div>
           </div>
         </div>
       </header>
@@ -117,17 +122,22 @@ export default function EvoLandingPage() {
                 </h1>
                 
                 <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
-                  Humanity knows remarkably little about how human potential works, leaving us unable to educate people effectively. Solving this critical gap is essential to supercharging human flourishing and advancement.
+                  Transform your potential into reality. Whether you seek intellect, power, creativity, wealth, knowledge, influence, discovery, or status: Evo accelerates your growth with results 3x better than traditional schooling, and 7x better for students dedicated to pursuing excellence.
                 </p>
               </div>
 
 
               {/* CTA Buttons */}
               <div className="flex justify-center gap-6">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25 px-12 py-6 text-xl rounded-full">
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <div className="relative">
+                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25 px-12 py-6 text-xl rounded-full">
+                    Join Waitlist
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Badge className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 text-sm font-bold">
+                    50% OFF
+                  </Badge>
+                </div>
                 <Button size="lg" asChild className="bg-gradient-to-r from-gray-100 to-white hover:from-gray-200 hover:to-gray-100 text-slate-700 shadow-lg shadow-gray-300/25 px-12 py-6 text-xl rounded-full border border-gray-200 hover:border-gray-300">
                   <Link href="/demo">
                     Watch Demo
@@ -135,6 +145,55 @@ export default function EvoLandingPage() {
                   </Link>
                 </Button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-32 relative bg-gradient-to-br from-white via-slate-50 to-gray-100">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl lg:text-6xl font-bold text-slate-800 mb-8">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">How It Works</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Our approach combines cutting-edge research with personalized learning pathways
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            {/* Step 1 */}
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl font-bold text-blue-700">1</span>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Let Evo Get to Know You</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Go through the beginner orientation and assessment to get familiar with the platform and Evo to get familiar with your unique situation and goals.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl font-bold text-blue-700">2</span>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Accelerated Learning</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Experience our scientifically-backed methods that unlock rapid skill acquisition and deep understanding across multiple domains.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl font-bold text-blue-700">3</span>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Grow</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Cultivate your human potential and grow along your unique journey to excellence. Build real world skills, unlock real world resources, and become the smartest and most capable person you know.
+              </p>
             </div>
           </div>
         </div>
@@ -152,9 +211,47 @@ export default function EvoLandingPage() {
               </h2>
             </div>
             
-            {/* Document Outline Placeholder */}
-            <div className="max-w-3xl mx-auto flex-1 flex items-center justify-center pb-16">
-              <div className="border-2 border-slate-400 rounded-2xl min-h-[600px] w-full">
+            {/* Mission Content */}
+            <div className="max-w-3xl mx-auto text-left pb-16">
+              <div className="prose prose-lg max-w-none text-slate-700">
+                <p className="text-lg leading-relaxed mb-8">
+                  The education system hasn't fundamentally changed since 1840, and in fact it has actually gotten worse for middle class and rich families since 400 CE. We think this is insane. Education is directly tied to human potential, which is directly tied to human flourishing. So not only have people gotten less intelligent over the past 1600 years, but they have also experienced less flourishing. This seems insane when you consider our unprecedented access to food, water, shelter, transportation, and technology.
+                </p>
+                
+                <p className="text-xl font-bold text-slate-800 mb-8">
+                  Our goal is to make education 10x better for 10x less cost, providing the resources needed for anyone who truly wants to pursue excellence and human flourishing to achieve it.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-slate-800 mb-6 mt-12">
+                  How We're Doing This
+                </h3>
+                
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-blue-600 mb-3">AI-Powered Learning Platform</h4>
+                    <p className="leading-relaxed">
+                      We've built an AI-powered educational platform that we estimate performs 3x better than traditional schooling on average, and 7x better for students dedicated to excellence. We believe we can scale this to 10x better on average and possibly 20x better for those pursuing excellence. This platform will continue to evolve and remain central to our mission.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-xl font-bold text-blue-600 mb-3">Advancing the Science of Eudaimonia</h4>
+                    <p className="leading-relaxed">
+                      We're furthering research into eudaimonia—the intersection of excellence, virtue, well-being, human flourishing, and human potential. By advancing our understanding of what truly enables people to thrive, we're creating knowledge that people can directly apply to live better lives.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-xl font-bold text-blue-600 mb-3">Real-World Infrastructure</h4>
+                    <p className="leading-relaxed">
+                      We're building physical spaces and communities so people aren't limited by geography. These will be places of beauty and meaning that foster cultures of excellence—whether intellectual, creative, innovative, scientific, or philosophical. Whatever form of excellence appeals to you, you'll find others pursuing it alongside you.
+                    </p>
+                  </div>
+                </div>
+                
+                <p className="text-lg font-medium text-slate-800 mt-8">
+                  Together, these three pillars will transform how humans learn, grow, and reach their full potential.
+                </p>
               </div>
             </div>
             
@@ -182,7 +279,7 @@ export default function EvoLandingPage() {
             
             {/* Right Column - Content Area */}
             <div className="lg:col-span-5 relative">
-              <div className="border-2 border-black rounded-lg p-8 min-h-[600px]">
+              <div className="border-2 border-black rounded-lg p-8 min-h-[400px]">
                 {/* Articles Grid - 3x3 Layout */}
                 <div className="grid grid-cols-3 gap-6 h-full">
                   {/* Article 1 - Top Left */}
@@ -193,6 +290,20 @@ export default function EvoLandingPage() {
                       </h3>
                     </div>
                   </Link>
+                  
+                  {/* Placeholder slots */}
+                  {[...Array(8)].map((_, i) => (
+                    <div key={i} className="group cursor-default">
+                      <div className="h-full flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50/50">
+                        <div className="text-center">
+                          <div className="text-gray-400 mb-2">
+                            <Sparkles className="h-6 w-6 mx-auto" />
+                          </div>
+                          <p className="text-sm text-gray-500 font-medium">Coming Soon</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                   
                 </div>
               </div>
@@ -206,75 +317,6 @@ export default function EvoLandingPage() {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <section id="resources" className="pt-16 pb-16 relative bg-gradient-to-br from-blue-50 to-slate-100 min-h-[460vh]">
-        <div className="container mx-auto px-4 lg:px-6 h-full">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-slate-800">
-              Resources
-            </h2>
-          </div>
-          
-          <div className="flex flex-col h-full space-y-0">
-            {/* Top black line */}
-            <div className="w-full h-1 bg-black"></div>
-            
-            {/* Section 1 */}
-            <div className="flex-1 flex flex-col justify-center items-center py-80">
-              <div className="max-w-md w-full">
-                <div className="group cursor-pointer">
-                  <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 h-32 flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:scale-105 hover:bg-gradient-to-br hover:from-blue-50 hover:to-white">
-                    <div className="space-y-3">
-                      <h3 className="text-2xl font-bold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
-                        Find a Mentor
-                      </h3>
-                      <p className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
-                        Tool to connect with mentors who have real experience and cultivated experience
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Black line divider */}
-            <div className="w-full h-1 bg-black"></div>
-            
-            {/* Section 2 */}
-            <div className="flex-1 flex flex-col justify-center items-center py-80">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-slate-800 mb-4">Section 2</h3>
-                <p className="text-lg text-slate-600">Content for section 2 goes here</p>
-              </div>
-            </div>
-            
-            {/* Black line divider */}
-            <div className="w-full h-1 bg-black"></div>
-            
-            {/* Section 3 */}
-            <div className="flex-1 flex flex-col justify-center items-center py-80">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-slate-800 mb-4">Section 3</h3>
-                <p className="text-lg text-slate-600">Content for section 3 goes here</p>
-              </div>
-            </div>
-            
-            {/* Black line divider */}
-            <div className="w-full h-1 bg-black"></div>
-            
-            {/* Section 4 */}
-            <div className="flex-1 flex flex-col justify-center items-center py-80">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-slate-800 mb-4">Section 4</h3>
-                <p className="text-lg text-slate-600">Content for section 4 goes here</p>
-              </div>
-            </div>
-            
-            {/* Bottom black line */}
-            <div className="w-full h-1 bg-black"></div>
-          </div>
-        </div>
-      </section>
 
     </div>
   );
