@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Effective:** [DATE]
+**Effective:** October 6, 2026
 
 This policy explains what information Evo collects, what we do with it, who
 we share it with, and the choices you have. Evo is run by Automatos Solutions LLC

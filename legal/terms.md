@@ -1,6 +1,6 @@
 # Terms of Service
 
-**Effective:** [DATE]
+**Effective:** October 6, 2026
 
 These terms are an agreement between you and Automatos Solutions LLC ("we", "us"),
 which runs Evo. By creating an account or using Evo, you agree to them. If
