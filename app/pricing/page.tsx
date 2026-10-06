@@ -97,15 +97,18 @@ export default function PricingPage() {
           </div>
 
           {/* Navigation with tech styling */}
-          <nav className="hidden md:flex items-center justify-center flex-1 space-x-16">
+          <nav className="hidden md:flex items-center justify-center flex-1 space-x-10">
+            <Link href="/#what-evo-does" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              What Evo Does
+            </Link>
             <Link href="/#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Our Mission
             </Link>
-            <Link href="/#how-it-works" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              How It Works
-            </Link>
             <Link href="/#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Deep Dive
+            </Link>
+            <Link href="/#reading" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              Required Reading
             </Link>
             <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Pricing

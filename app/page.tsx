@@ -6,7 +6,7 @@ import {
   Users,
   Zap,
   ArrowRight,
-  Play,
+  ArrowUpRight,
   Star,
   CheckCircle,
   Globe,
@@ -18,10 +18,41 @@ import {
   Cpu,
   Target,
   Infinity,
-  Sparkles,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+
+// Curated list shown in the Required Reading section. Add new entries here.
+// Categories:
+//   Foundations - aligned thinking on cultivating human potential
+//   Signals     - the world coming around to our view
+//   Frontier    - ambitious thinking beyond education that still fits
+const readingItems = [
+  {
+    category: "Foundations",
+    title: "Why We Stopped Making Einsteins",
+    source: "Erik Hoel, The Intrinsic Perspective",
+    description:
+      "How aristocratic tutoring produced a disproportionate share of history's geniuses, and why its disappearance matters for how we learn today.",
+    href: "https://t.co/zJ8fNDWAwj",
+  },
+  {
+    category: "Signals",
+    title: "Tech Companies Launching Their Own Programs to Train Grads Because They 'Can't Rely' on Ivy Leagues",
+    source: "Lydia Moynihan, New York Post",
+    description:
+      "Palantir and other tech companies are building their own education programs because even elite degrees no longer guarantee top talent.",
+    href: "https://nypost.com/2026/10/01/tech/tech-companies-launching-their-own-programs-to-train-grads-because-they-cant-rely-on-ivy-leagues/",
+  },
+  {
+    category: "Frontier",
+    title: "Casey Handmer",
+    source: "Read anything by him",
+    description:
+      "Physicist and founder of Terraform Industries, writing on energy, space, and building ambitious things from first principles.",
+    href: "https://caseyhandmer.wordpress.com/",
+  },
+]
 
 export default function EvoLandingPage() {
   return (
@@ -73,15 +104,18 @@ export default function EvoLandingPage() {
           </div>
 
           {/* Navigation with tech styling */}
-          <nav className="hidden md:flex items-center justify-center flex-1 space-x-16">
+          <nav className="hidden md:flex items-center justify-center flex-1 space-x-10">
+            <Link href="#what-evo-does" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              What Evo Does
+            </Link>
             <Link href="#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Our Mission
             </Link>
-            <Link href="#how-it-works" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              How It Works
-            </Link>
             <Link href="#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Deep Dive
+            </Link>
+            <Link href="#reading" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              Required Reading
             </Link>
             <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
               Pricing
@@ -138,63 +172,20 @@ export default function EvoLandingPage() {
                     50% OFF
                   </Badge>
                 </div>
-                <Button size="lg" asChild className="bg-gradient-to-r from-gray-100 to-white hover:from-gray-200 hover:to-gray-100 text-slate-700 shadow-lg shadow-gray-300/25 px-12 py-6 text-xl rounded-full border border-gray-200 hover:border-gray-300">
-                  <Link href="/demo">
-                    Watch Demo
-                    <Play className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-32 relative bg-gradient-to-br from-white via-slate-50 to-gray-100">
+      {/* What Does Evo Do Section - brief overview of the software */}
+      <section id="what-evo-does" className="py-32 relative bg-gradient-to-br from-white via-slate-50 to-gray-100">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center mb-16">
+          <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-5xl lg:text-6xl font-bold text-slate-800 mb-8">
-              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">How It Works</span>
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">What Does Evo Do?</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our approach combines cutting-edge research with personalized learning pathways
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {/* Step 1 */}
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-2xl font-bold text-blue-700">1</span>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Let Evo Get to Know You</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Go through the beginner orientation and assessment to get familiar with the platform and Evo to get familiar with your unique situation and goals.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-2xl font-bold text-blue-700">2</span>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Accelerated Learning</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Experience our scientifically-backed methods that unlock rapid skill acquisition and deep understanding across multiple domains.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-2xl font-bold text-blue-700">3</span>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Grow</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Cultivate your human potential and grow along your unique journey to excellence. Build real world skills, unlock real world resources, and become the smartest and most capable person you know.
-              </p>
-            </div>
+            {/* TODO: short overview paragraph and a few one-line points */}
           </div>
         </div>
       </section>
@@ -263,60 +254,72 @@ export default function EvoLandingPage() {
         </div>
       </section>
 
-      {/* Deep Dive Section */}
-      <section id="deep-dive" className="py-32 relative bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
+      {/* Deep Dive Section - thorough breakdown of the software */}
+      <section id="deep-dive" className="py-32 relative bg-gradient-to-br from-white via-slate-50 to-gray-100">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-5xl lg:text-6xl font-bold text-slate-800 mb-8">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Deep Dive</span>
+            </h2>
+            {/* TODO: subtitle and detailed breakdown of features, how a session works, etc. */}
+          </div>
+        </div>
+      </section>
+
+      {/* Required Reading Section */}
+      <section id="reading" className="py-32 relative bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-7 gap-8 items-start">
             {/* Left Column - Title and Subtitle */}
             <div className="lg:col-span-2">
               <h2 className="text-5xl lg:text-6xl font-bold text-slate-800 mb-6">
-                <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Deep Dive</span>
+                <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Required Reading</span>
               </h2>
               <p className="text-xl text-slate-600">
-                Explore comprehensive analyses, detailed methodologies, and cutting-edge research that powers our mission
+                The essays, research, and headlines that shape how we think about education, ambition, and human potential. Some inspired Evo, some prove the point, and some are just too good to leave out.
               </p>
             </div>
-            
-            {/* Right Column - Content Area */}
-            <div className="lg:col-span-5 relative">
-              <div className="border-2 border-black rounded-lg p-8 min-h-[400px]">
-                {/* Articles Grid - 3x3 Layout */}
-                <div className="grid grid-cols-3 gap-6 h-full">
-                  {/* Article 1 - Top Left */}
-                  <Link href="https://t.co/zJ8fNDWAwj" target="_blank" rel="noopener noreferrer" className="group cursor-pointer">
-                    <div className="h-full hover:text-blue-600 transition-colors duration-300">
-                      <h3 className="text-lg font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors font-serif" style={{transform: 'scaleY(1.5)'}}>
-                        Why we stopped making einsteins
-                      </h3>
-                    </div>
-                  </Link>
-                  
-                  {/* Placeholder slots */}
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i} className="group cursor-default">
-                      <div className="h-full flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50/50">
-                        <div className="text-center">
-                          <div className="text-gray-400 mb-2">
-                            <Sparkles className="h-6 w-6 mx-auto" />
-                          </div>
-                          <p className="text-sm text-gray-500 font-medium">Coming Soon</p>
-                        </div>
+
+            {/* Right Column - Curated Content List */}
+            <div className="lg:col-span-5">
+              <ul className="divide-y divide-slate-200 border-y border-slate-200">
+                {readingItems.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-6 py-6">
+                      <div>
+                        <Badge variant="outline" className="mb-3 border-blue-300 text-blue-700 uppercase tracking-wider text-xs">
+                          {item.category}
+                        </Badge>
+                        <h3 className="text-2xl font-bold text-slate-800 font-serif leading-tight group-hover:text-blue-600 transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm uppercase tracking-wider text-slate-500 mt-2">{item.source}</p>
+                        <p className="text-slate-600 leading-relaxed mt-3">{item.description}</p>
                       </div>
-                    </div>
-                  ))}
-                  
-                </div>
-              </div>
-              
-              {/* Next Tab Arrow */}
-              <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-white border-2 border-black rounded-full p-3 hover:bg-gray-50 transition-colors">
-                <ArrowRight className="h-6 w-6 text-black" />
-              </button>
+                      <ArrowUpRight className="h-6 w-6 shrink-0 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Footer */}
+      <footer className="border-t border-blue-200 bg-white py-8">
+        <div className="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+          <p>© {new Date().getFullYear()} Automatos Solutions LLC</p>
+          <div className="flex items-center space-x-8">
+            <Link href="/terms" className="hover:text-blue-600 transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/privacy" className="hover:text-blue-600 transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
+        </div>
+      </footer>
 
     </div>
   );
