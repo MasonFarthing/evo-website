@@ -1,6 +1,3 @@
-"use client"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -8,34 +5,53 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import {
-  CheckCircle,
-  ArrowRight,
-  Star,
-  Zap,
-  Crown,
-  Rocket,
-  Users,
-  Brain,
-} from "lucide-react"
+import { CheckCircle, ArrowRight, Zap, Rocket } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
-import { WaitlistDialog } from "@/components/waitlist-dialog"
+import { SiteHeader } from "@/components/site-header"
+import { SIGN_UP_URL } from "@/lib/links"
+
+// The two subscriptions, as the app itself describes them when you subscribe.
+// Keep these in step with the app.
+const plans = [
+  {
+    name: "Basic",
+    price: 20,
+    tagline: "Everything you need to start",
+    icon: Rocket,
+    accent: false,
+    points: [
+      "Monthly usage for learning with the teacher",
+      "20 plan credits a month, for drafting new learning plans",
+      "Teacher settings: Low and Medium",
+      "The Learning Tool",
+    ],
+  },
+  {
+    name: "Pro",
+    price: 50,
+    tagline: "More room, and the most capable teacher",
+    icon: Zap,
+    accent: true,
+    points: [
+      "3× the monthly usage of the $20 plan",
+      "50 plan credits a month, for drafting new learning plans",
+      "Teacher settings: Low, Medium and Advanced",
+      "The Learning Tool",
+    ],
+  },
+]
+
+export const metadata = {
+  title: "Pricing - Evo",
+}
 
 export default function PricingPage() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false)
-
-  const openWaitlist = () => {
-    setIsDialogOpen(true)
-  }
-
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
       {/* Space Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/20 to-blue-950/30"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-cyan-950/10 to-transparent"></div>
-      
+
       {/* Stars */}
       <div className="absolute inset-0">
         <div className="absolute top-[10%] left-[20%] w-1 h-1 bg-white rounded-full animate-pulse"></div>
@@ -44,284 +60,69 @@ export default function PricingPage() {
         <div className="absolute top-[60%] right-[25%] w-1 h-1 bg-cyan-300 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
         <div className="absolute top-[80%] left-[30%] w-0.5 h-0.5 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
-      
+
       {/* Nebula Glow Effects */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-radial from-blue-600/10 via-purple-600/5 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-radial from-cyan-600/10 via-blue-600/5 to-transparent rounded-full blur-3xl"></div>
 
-      {/* Header */}
-      <header className="border-b border-blue-200 backdrop-blur-sm bg-white/90 sticky top-0 z-50">
-        <div className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between">
-          {/* Logo with enhanced glow */}
-          <div className="flex items-center space-x-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <svg viewBox="0 0 170 80" className="w-24 h-14" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="quantumShell" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor:"#00ffff", stopOpacity:1}} />
-                    <stop offset="50%" style={{stopColor:"#0080ff", stopOpacity:1}} />
-                    <stop offset="100%" style={{stopColor:"#0040ff", stopOpacity:1}} />
-                  </linearGradient>
-                  
-                  <filter id="stellarGlow" x="-100%" y="-100%" width="300%" height="300%">
-                    <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-                
-                <g filter="url(#stellarGlow)" transform="translate(-180, -210)">
-                  <g transform="translate(180, 250)">
-                    <rect x="0" y="-30" width="35" height="8" fill="url(#quantumShell)"/>
-                    <rect x="0" y="-6" width="28" height="6" fill="url(#quantumShell)"/>
-                    <rect x="0" y="22" width="35" height="8" fill="url(#quantumShell)"/>
-                    <rect x="0" y="-30" width="8" height="60" fill="url(#quantumShell)"/>
-                  </g>
-                  
-                  <g transform="translate(230, 250)">
-                    <polygon points="0,-30 6,-30 18,30 12,30" fill="url(#quantumShell)"/>
-                    <polygon points="32,-30 38,-30 26,30 18,30" fill="url(#quantumShell)"/>
-                  </g>
-                  
-                  <g transform="translate(290, 250)">
-                    <circle cx="19" cy="0" r="28" fill="none" stroke="url(#quantumShell)" strokeWidth="8"/>
-                    <circle cx="19" cy="0" r="15" fill="none" stroke="url(#quantumShell)" strokeWidth="2" opacity="0.7">
-                      <animate attributeName="r" values="15;18;15" dur="4s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-                </g>
-              </svg>
-            </Link>
-          </div>
-
-          {/* Navigation with tech styling */}
-          <nav className="hidden md:flex items-center justify-center flex-1 space-x-10">
-            <Link href="/#what-evo-does" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              What Evo Does
-            </Link>
-            <Link href="/#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Our Mission
-            </Link>
-            <Link href="/#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Deep Dive
-            </Link>
-            <Link href="/#reading" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Required Reading
-            </Link>
-            <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Pricing
-            </Link>
-          </nav>
-
-          {/* CTA Buttons */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" asChild className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent hover:border-blue-300">
-              <Link href="/signin">Sign In</Link>
-            </Button>
-            <div className="relative">
-              <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                <Link href="/signup">
-                  Join Waitlist
-                </Link>
-              </Button>
-              <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
-                50% OFF
-              </Badge>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Pricing Cards */}
-      <section className="py-32">
+      <section className="py-32 relative">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            {/* Basic Plan - Left */}
-            <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 relative flex flex-col h-full">
-              <CardHeader className="space-y-6 p-8 flex-grow">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                    <Rocket className="h-6 w-6 text-white" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {plans.map((plan) => (
+              <Card
+                key={plan.name}
+                className={`bg-slate-800/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 relative flex flex-col h-full ${plan.accent ? "border-blue-600/50" : "border-slate-700/50"}`}
+              >
+                <CardHeader className="space-y-6 p-8 flex-grow">
+                  <div className="flex items-center space-x-3">
+                    <div className={`w-12 h-12 bg-gradient-to-br rounded-lg flex items-center justify-center ${plan.accent ? "from-blue-600 to-purple-600" : "from-blue-600 to-blue-700"}`}>
+                      <plan.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-white text-2xl">{plan.name}</CardTitle>
+                      <CardDescription className="text-slate-400">{plan.tagline}</CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-white text-2xl">Basic</CardTitle>
-                    <CardDescription className="text-slate-400">Essential growth tools</CardDescription>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
+
                   <div className="flex items-baseline space-x-2">
-                    <span className="text-4xl font-bold text-white">$20</span>
+                    <span className="text-4xl font-bold text-white">${plan.price}</span>
                     <span className="text-slate-400">/month</span>
                   </div>
-                  <p className="text-slate-400">Start your potential unleashing journey</p>
-                </div>
 
-                <div className="space-y-4 flex-grow">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Evo - 1M tokens</span>
+                  <div className="space-y-4 flex-grow">
+                    {plan.points.map((point) => (
+                      <div key={point} className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                        <span className="text-slate-300">{point}</span>
+                      </div>
+                    ))}
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Evo Learning - 1M tokens</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">All Basic Features</span>
-                  </div>
-                </div>
 
-                <div className="relative">
-                  <Button 
+                  <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white mt-auto"
+                    className={`w-full bg-gradient-to-r text-white mt-auto ${plan.accent ? "from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" : "from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"}`}
                   >
-                    <Link href="/signup">
-                      Join Waitlist
+                    <a href={SIGN_UP_URL}>
+                      Get Started
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
+                    </a>
                   </Button>
-                  <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
-                    50% OFF
-                  </Badge>
-                </div>
-              </CardHeader>
-            </Card>
-
-            {/* Pro Plan - Middle (Most Popular) */}
-            <Card className="bg-slate-800/50 border-blue-600/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 relative flex flex-col h-full">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-1">
-                  Most Popular
-                </Badge>
-              </div>
-              
-              <CardHeader className="space-y-6 p-8 flex-grow">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                    <Zap className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-white text-2xl">Pro</CardTitle>
-                    <CardDescription className="text-slate-400">Basic + all add-ons</CardDescription>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="flex items-baseline space-x-2">
-                    <span className="text-4xl font-bold text-white">$50</span>
-                    <span className="text-slate-400">/month</span>
-                  </div>
-                  <p className="text-slate-400">Everything in Basic + all add-ons</p>
-                </div>
-
-                <div className="space-y-4 flex-grow">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Evo - 2.5M tokens</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Evo Learning - 2.5M tokens</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">All Basic Features</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-400" />
-                    <span className="text-slate-300">Advanced Features</span>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <Button 
-                    asChild
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white mt-auto"
-                  >
-                    <Link href="/signup">
-                      Join Waitlist
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
-                    50% OFF
-                  </Badge>
-                </div>
-              </CardHeader>
-            </Card>
-
-            {/* Premium Plan - Right */}
-            <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 relative flex flex-col h-full">
-              <CardHeader className="space-y-6 p-8 flex-grow">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-                    <Crown className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-white text-2xl">Premium</CardTitle>
-                    <CardDescription className="text-slate-400">Maximum intelligence</CardDescription>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="flex items-baseline space-x-2">
-                    <span className="text-4xl font-bold text-white">$100</span>
-                    <span className="text-slate-400">/month</span>
-                  </div>
-                  <p className="text-slate-400">Ultimate AI experience</p>
-                </div>
-
-                <div className="space-y-4 flex-grow">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">Evo - 5M tokens</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">Evo Learning - 5M tokens</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">All Basic Features</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-purple-400" />
-                    <span className="text-slate-300">Advanced Features</span>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <Button 
-                    asChild
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-auto"
-                  >
-                    <Link href="/signup">
-                      Join Waitlist
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
-                    50% OFF
-                  </Badge>
-                </div>
-              </CardHeader>
-            </Card>
-
+                </CardHeader>
+              </Card>
+            ))}
           </div>
+
+          <p className="text-center text-slate-400 text-sm max-w-2xl mx-auto mt-12 leading-relaxed">
+            You pick a plan after creating your account. Sales tax is added at checkout where it applies.
+            Evo runs on laptops and desktops. See the{" "}
+            <Link href="/terms" className="text-blue-400 hover:text-blue-300 underline">Terms of Service</Link>{" "}
+            for billing and cancellation.
+          </p>
         </div>
       </section>
-
-      {/* Waitlist Dialog */}
-      <WaitlistDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
-      
-
-
-
     </div>
-  );
-} 
+  )
+}

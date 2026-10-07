@@ -1,26 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import {
-  BookOpen,
-  Brain,
-  Users,
-  Zap,
-  ArrowRight,
-  ArrowUpRight,
-  Star,
-  CheckCircle,
-  Globe,
-  Smartphone,
-  Database,
-  TrendingUp,
-  Rocket,
-  Shield,
-  Cpu,
-  Target,
-  Infinity,
-} from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
+import { SiteHeader } from "@/components/site-header"
+import { SIGN_UP_URL } from "@/lib/links"
 
 // Curated list shown in the Required Reading section. Add new entries here.
 // Categories:
@@ -58,88 +41,7 @@ export default function EvoLandingPage() {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
 
-      {/* Header */}
-      <header className="border-b border-blue-200 backdrop-blur-sm bg-white/90 sticky top-0 z-50">
-        <div className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between">
-          {/* Logo with enhanced glow */}
-          <div className="flex items-center space-x-2">
-            <svg viewBox="0 0 170 80" className="w-24 h-14" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="quantumShell" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor:"#00ffff", stopOpacity:1}} />
-                  <stop offset="50%" style={{stopColor:"#0080ff", stopOpacity:1}} />
-                  <stop offset="100%" style={{stopColor:"#0040ff", stopOpacity:1}} />
-                </linearGradient>
-                
-                <filter id="stellarGlow" x="-100%" y="-100%" width="300%" height="300%">
-                  <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-                  <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-              
-              <g filter="url(#stellarGlow)" transform="translate(-180, -210)">
-                <g transform="translate(180, 250)">
-                  <rect x="0" y="-30" width="35" height="8" fill="url(#quantumShell)"/>
-                  <rect x="0" y="-6" width="28" height="6" fill="url(#quantumShell)"/>
-                  <rect x="0" y="22" width="35" height="8" fill="url(#quantumShell)"/>
-                  <rect x="0" y="-30" width="8" height="60" fill="url(#quantumShell)"/>
-                </g>
-                
-                <g transform="translate(230, 250)">
-                  <polygon points="0,-30 6,-30 18,30 12,30" fill="url(#quantumShell)"/>
-                  <polygon points="32,-30 38,-30 26,30 18,30" fill="url(#quantumShell)"/>
-                </g>
-                
-                <g transform="translate(290, 250)">
-                  <circle cx="19" cy="0" r="28" fill="none" stroke="url(#quantumShell)" strokeWidth="8"/>
-                  <circle cx="19" cy="0" r="15" fill="none" stroke="url(#quantumShell)" strokeWidth="2" opacity="0.7">
-                    <animate attributeName="r" values="15;18;15" dur="4s" repeatCount="indefinite"/>
-                  </circle>
-                </g>
-              </g>
-            </svg>
-          </div>
-
-          {/* Navigation with tech styling */}
-          <nav className="hidden md:flex items-center justify-center flex-1 space-x-10">
-            <Link href="#what-evo-does" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              What Evo Does
-            </Link>
-            <Link href="#mission" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Our Mission
-            </Link>
-            <Link href="#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Deep Dive
-            </Link>
-            <Link href="#reading" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Required Reading
-            </Link>
-            <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-              Pricing
-            </Link>
-          </nav>
-
-          {/* CTA Buttons */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" asChild className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 border border-transparent hover:border-blue-300">
-              <Link href="/signin">Sign In</Link>
-            </Button>
-            <div className="relative">
-              <Button variant="outline" asChild className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                <Link href="/signup">
-                  Join Waitlist
-                </Link>
-              </Button>
-              <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-1 py-0.5 text-xs font-bold">
-                50% OFF
-              </Badge>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Hero Section */}
       <section className="relative py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-100 to-blue-200">
@@ -161,17 +63,15 @@ export default function EvoLandingPage() {
               </div>
 
 
-              {/* CTA Buttons */}
-              <div className="flex justify-center gap-6">
-                <div className="relative">
-                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25 px-12 py-6 text-xl rounded-full">
-                    Join Waitlist
+              {/* CTA — accounts are created in the app */}
+              <div className="flex flex-col items-center gap-4">
+                <Button size="lg" asChild className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-500/25 px-12 py-6 text-xl rounded-full">
+                  <a href={SIGN_UP_URL}>
+                    Get Started
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Badge className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 text-sm font-bold">
-                    50% OFF
-                  </Badge>
-                </div>
+                  </a>
+                </Button>
+                <p className="text-sm text-slate-500">Evo runs on laptops and desktops.</p>
               </div>
             </div>
           </div>
@@ -185,7 +85,23 @@ export default function EvoLandingPage() {
             <h2 className="text-5xl lg:text-6xl font-bold text-slate-800 mb-8">
               <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">What Does Evo Do?</span>
             </h2>
-            {/* TODO: short overview paragraph and a few one-line points */}
+            <p className="text-xl text-slate-600 leading-relaxed mb-12">
+              Evo is a place to learn with an AI teacher. There are two sides to it.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8 text-left">
+              <div className="rounded-2xl border border-blue-200 bg-white p-8">
+                <h3 className="text-2xl font-bold text-slate-800 mb-3">Structured learning</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Say what you want to learn, how long you want it to take and how complex it should be. Evo drafts a learning plan tailored to that, and a teacher takes you through it one unit at a time.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-blue-200 bg-white p-8">
+                <h3 className="text-2xl font-bold text-slate-800 mb-3">Learning tool</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Upload your previous chats with AI. Evo reads them, finds the things you keep being curious about, and serves them up for you to explore with a tutor.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
