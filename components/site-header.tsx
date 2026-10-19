@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { SIGN_IN_URL, SIGN_UP_URL } from "@/lib/links"
+import { SHOW_READING } from "@/lib/flags"
 
 // The header shared by the landing page and the pricing page: logo, section
 // links, and the Sign In / Sign Up buttons, which lead to the Evo app.
@@ -61,9 +62,11 @@ export function SiteHeader() {
           <Link href="/#deep-dive" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
             Deep Dive
           </Link>
-          <Link href="/#reading" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
-            Required Reading
-          </Link>
+          {SHOW_READING && (
+            <Link href="/#reading" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
+              Required Reading
+            </Link>
+          )}
           <Link href="/pricing" className="text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wider font-medium">
             Pricing
           </Link>
