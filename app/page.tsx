@@ -58,7 +58,7 @@ export default function EvoLandingPage() {
                 </h1>
                 
                 <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
-                  Transform your potential into reality. Whether you seek intellect, power, creativity, wealth, knowledge, influence, discovery, or status: Evo accelerates your growth with results 3x better than traditional schooling, and 7x better for students dedicated to pursuing excellence.
+                  Transform your potential into reality. Whether you seek intellect, power, creativity, wealth, knowledge, influence, discovery, or status: Evo accelerates your growth significantly better than traditional schooling, especially for students dedicated to pursuing excellence.
                 </p>
               </div>
 
@@ -86,19 +86,19 @@ export default function EvoLandingPage() {
               <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">What Does Evo Do?</span>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed mb-12">
-              Evo is a place to learn with an AI teacher. There are two sides to it.
+              Evo is a learning platform made up of multiple products, each tailored to learning different things in different ways.
             </p>
             <div className="grid md:grid-cols-2 gap-8 text-left">
               <div className="rounded-2xl border border-blue-200 bg-white p-8">
                 <h3 className="text-2xl font-bold text-slate-800 mb-3">Structured learning</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Say what you want to learn, how long you want it to take and how complex it should be. Evo drafts a learning plan tailored to that, and a teacher takes you through it one unit at a time.
+                  For when you want to learn about something specific, and learn it fully. That can be a short dive into something you're curious about, or full-length learning to mastery in any subject.
                 </p>
               </div>
               <div className="rounded-2xl border border-blue-200 bg-white p-8">
                 <h3 className="text-2xl font-bold text-slate-800 mb-3">Learning tool</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Upload your previous chats with AI. Evo reads them, finds the things you keep being curious about, and serves them up for you to explore with a tutor.
+                  For finding curious threads to explore based on what you're already interested in. It takes in all of your previous chats with AI, pulls out everything you've been curious about, and turns it into threads for you to explore.
                 </p>
               </div>
             </div>
