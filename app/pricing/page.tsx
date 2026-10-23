@@ -39,7 +39,7 @@ export default function PricingPage() {
             <div>
               <dt className="font-semibold text-slate-900 mb-2">Usage</dt>
               <dd>
-                Covers your learning sessions with Thomas, in both Structured Learning and Learning Tool threads. Each plan has a daily and a monthly limit.
+                Covers your learning sessions with Thomas, in both Structured Learning and Curiosity Threads. Each plan has a daily and a monthly limit.
               </dd>
             </div>
             <div>

@@ -17,7 +17,7 @@ type Plan = {
   summary: string
   monthly: number
   // Price for 3 months paid up front, when the plan offers it.
-  quarterly?: { price: number; discount: string }
+  quarterly?: { price: number; save: number }
   points: (billing: Billing) => Point[]
   // The plan Evo actually costs; shown filled and centered.
   anchor?: boolean
@@ -38,10 +38,13 @@ const plans: Plan[] = [
         text: "Teacher settings: Low, and limited Medium",
         info: "Low uses small models and Medium uses medium-sized models. High isn't included.",
       },
-      { text: "25 learning plans a month" },
       {
-        text: "No Learning Tool",
-        info: "If you've already imported your chats on Normal or Ultra, you keep the Learning Tool when you switch to Basic.",
+        text: "20 plan credits a month",
+        info: "For making learning plans: shorter plans take ½ credit, longer ones 1.",
+      },
+      {
+        text: "No Curiosity Threads",
+        info: "If you've already imported your chats on Normal or Ultra, you keep the threads you have when you switch to Basic, but you can't import new chats on it.",
       },
     ],
   },
@@ -49,20 +52,23 @@ const plans: Plan[] = [
     name: "Normal",
     summary: "What Evo actually costs to run. We'd rather be upfront about it.",
     monthly: 50,
-    quarterly: { price: 120, discount: "20% off" },
+    quarterly: { price: 120, save: 20 },
     anchor: true,
     points: (billing) => [
       {
-        text: "2.5× Basic's usage, with daily and monthly limits",
-        info: "Shared across Structured Learning and Learning Tool threads.",
+        text: "3× Basic's usage, with daily and monthly limits",
+        info: "Shared across Structured Learning and Curiosity Threads.",
       },
       {
         text: "Teacher settings: near-unlimited Low and Medium, with more limited High",
         info: "High uses large models. Near-unlimited isn't guaranteed; you could still reach your limits.",
       },
-      { text: "50 learning plans a month" },
       {
-        text: "The Learning Tool, for ChatGPT and Claude chats",
+        text: "50 plan credits a month",
+        info: "For making learning plans: shorter plans take ½ credit, longer ones 1.",
+      },
+      {
+        text: "Curiosity Threads, from your ChatGPT and Claude chats",
         info: "The first import takes a while: about 16 hours for 300 chats and 36 hours for 600. After that, new chats are added quickly.",
       },
       billing === "quarterly"
@@ -71,8 +77,8 @@ const plans: Plan[] = [
             info: "Importing your full history is included when you pay for 3 months. Adding new chats later is always included.",
           }
         : {
-            text: "Chat import: $10 per 300 chats, or free with 3 months",
-            info: "Importing your full history is expensive to run, so it's charged once. Adding new chats later is included.",
+            text: "Chat import: $10 for up to 300 chats, or free with 3 months",
+            info: "Importing your full history is expensive to run, so it's charged once, when you import. Up to 300 chats is $10; past that it's the same rate by the chat, so 450 chats is $15. Newer chats you add later are free, up to 500 a month.",
           },
       { text: "Access to most new features as Evo grows" },
     ],
@@ -81,18 +87,18 @@ const plans: Plan[] = [
     name: "Ultra",
     summary: "Everything Evo has, as much as you want.",
     monthly: 100,
-    quarterly: { price: 195, discount: "35% off" },
+    quarterly: { price: 195, save: 35 },
     points: () => [
       {
         text: "Ultra usage: daily and monthly limits that are basically unlimited",
-        info: "Shared across Structured Learning and Learning Tool threads. Unlimited is the goal, but it isn't guaranteed.",
+        info: "Shared across Structured Learning and Curiosity Threads. Unlimited is the goal, but it isn't guaranteed.",
       },
       { text: "Teacher settings: near-unlimited Low, Medium and High" },
       {
         text: "Unlimited learning plans",
         info: "Guaranteed, within reasonable use.",
       },
-      { text: "The Learning Tool, with free chat import however many chats you have" },
+      { text: "Curiosity Threads, with free chat import however many chats you have" },
       { text: "Full access to everything new as Evo grows, including Ultra-only upgrades" },
     ],
   },
@@ -168,7 +174,7 @@ export function PricingPlans() {
         <div role="radiogroup" aria-label="Billing period" className="inline-flex rounded-full border border-slate-300 bg-white p-1">
           {([
             ["monthly", "Monthly"],
-            ["quarterly", "3 months up front"],
+            ["quarterly", "3 months"],
           ] as const).map(([value, label]) => (
             <button
               key={value}
@@ -181,6 +187,11 @@ export function PricingPlans() {
               }`}
             >
               {label}
+              {value === "quarterly" && (
+                <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-800">
+                  Save up to 35%
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -201,29 +212,36 @@ export function PricingPlans() {
                   : "bg-white text-slate-700 border border-slate-200 rounded-2xl lg:first:rounded-r-none lg:last:rounded-l-none lg:first:border-r-0 lg:last:border-l-0"
               }`}
             >
-              <div className="flex items-baseline justify-between gap-4">
+              <div className="flex items-center justify-between gap-4">
                 <h2 id={`plan-${plan.name}`} className={`text-2xl font-bold ${plan.anchor ? "text-white" : "text-slate-900"}`}>
                   {plan.name}
                 </h2>
-                {plan.anchor && <span className="text-sm text-blue-200">What Evo costs</span>}
+                {quarterly && (
+                  <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800">
+                    Save {quarterly.save}%
+                  </span>
+                )}
               </div>
               <p className={`mt-3 leading-relaxed ${plan.anchor ? "text-blue-100" : "text-slate-500"}`}>{plan.summary}</p>
 
               <div className="mt-8 min-h-[5.5rem]">
                 <div className="flex items-baseline gap-2">
+                  {quarterly && (
+                    <s className={`text-2xl font-semibold tabular-nums ${plan.anchor ? "text-blue-300" : "text-slate-400"}`}>
+                      <span className="sr-only">Was </span>${plan.monthly}
+                    </s>
+                  )}
                   <span className={`text-6xl font-bold tracking-tight tabular-nums ${plan.anchor ? "text-white" : "text-slate-900"}`}>
-                    ${quarterly ? quarterly.price : plan.monthly}
+                    ${quarterly ? quarterly.price / 3 : plan.monthly}
                   </span>
-                  <span className={plan.anchor ? "text-blue-200" : "text-slate-500"}>
-                    {quarterly ? "for 3 months" : "/month"}
-                  </span>
+                  <span className={plan.anchor ? "text-blue-200" : "text-slate-500"}>/month</span>
                 </div>
                 <p className={`mt-2 text-sm ${plan.anchor ? "text-blue-200" : "text-slate-500"}`}>
                   {quarterly
-                    ? `${quarterly.discount}, instead of $${plan.monthly * 3}`
+                    ? `$${quarterly.price} paid up front for 3 months`
                     : billing === "quarterly"
-                      ? "Monthly only"
-                      : " "}
+                      ? "Billed monthly only"
+                      : "Billed monthly"}
                 </p>
               </div>
 

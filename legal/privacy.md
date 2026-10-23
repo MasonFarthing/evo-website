@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Effective:** October 6, 2026
+**Effective:** October 22, 2026
 
 This policy explains what information Evo collects, what we do with it, who
 we share it with, and the choices you have. Evo is run by Automatos Solutions LLC
@@ -16,7 +16,7 @@ your Google password.
 you add to them; your conversations with Evo's teacher and tutor, including
 anything you type or say; and your settings.
 
-**Chat histories you import.** If you use the Learning Tool, you can upload an
+**Chat histories you import.** If you use Curiosity Threads, you can upload an
 export of your conversations from ChatGPT or Claude. We keep the
 conversations from that export (their titles, dates and text) and what Evo
 builds from them: a map of topics, your curiosities and their lessons. We
@@ -45,7 +45,7 @@ advertising or analytics trackers.
 ## How we use it
 
 - To provide Evo: run your account, generate your plans, lessons and
-  replies, and build your Learning Tool library.
+  replies, and build your Curiosity Threads library.
 - To bill you and enforce your plan's limits.
 - To keep Evo secure and working, and to fix problems.
 - To email you about your account, for example to tell you that an import
@@ -91,7 +91,7 @@ which case this policy continues to apply to your information).
 ## How long we keep it
 
 We keep your information while you have an account. When you delete your
-account, we delete your plans, conversations, imported chats, Learning Tool
+account, we delete your plans, conversations, imported chats, Curiosity Threads
 library, settings and usage records from our database, and delete your
 customer record at Stripe, which cancels your subscription. Stripe and our
 other providers may keep some records (for example, payment records) for as

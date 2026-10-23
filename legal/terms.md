@@ -1,6 +1,6 @@
 # Terms of Service
 
-**Effective:** October 6, 2026
+**Effective:** October 22, 2026
 
 These terms are an agreement between you and Automatos Solutions LLC ("we", "us"),
 which runs Evo. By creating an account or using Evo, you agree to them. If
@@ -16,27 +16,47 @@ support@use-evo.com if you think someone else has used it.
 
 ## Plans and payment
 
-**Subscriptions.** Evo is paid by monthly subscription. Each plan includes a
-monthly usage allowance, shown on our pricing page and in Settings. When
-you've used a month's allowance, some features pause until your plan renews.
+**Subscriptions.** Evo is paid by subscription. Our plans (Basic, Normal and
+Ultra), their prices and what each includes are on our pricing page. Each
+plan includes a monthly usage allowance and a daily limit on it, shown in
+Settings. When you've used a day's or a month's allowance, some features
+pause until it frees up or your plan renews.
 
-**Billing.** Your subscription renews automatically every month on the date
-you subscribed, and we charge the card you gave us through Stripe until you
-cancel. Prices are in US dollars and don't include taxes; any sales tax or VAT
+**Reasonable use.** Where a plan describes something as unlimited or "basically
+unlimited", it is for normal personal learning. To keep Evo working for
+everyone, we may limit how quickly you can use it (for example, how many
+learning plans you can create in an hour or a day) and may treat automated or
+excessive use as a breach of these terms.
+
+**Billing.** Your subscription renews automatically on the date you
+subscribed: every month, or every 3 months if you chose to pay for 3 months
+up front (offered on some plans). We charge the card you gave us through
+Stripe until you cancel. Prices are in US dollars and don't include taxes; any sales tax or VAT
 that applies where you live is added at checkout and shown before you pay.
 We'll tell you in advance before changing the price of your plan; the new
 price applies from your next renewal after that notice.
 
 **Changing plan.** Moving to a larger plan takes effect immediately, and you
-pay the difference for the rest of the current month. Moving to a smaller
-plan takes effect at your next renewal.
+pay the difference for the rest of the current billing period. Moving to a
+smaller plan takes effect at your next renewal. If you move to a plan that
+doesn't include Curiosity Threads, you keep the threads already made from
+your chats, but you can't import or add chats on that plan.
+
+**Chat imports.** On plans that charge for importing chats, the charge is
+made once, when you import, and is based on the number of chats in the
+import; you'll see the price before you pay. Chats that started after your
+previous import are added without charge, up to the limit shown on our
+pricing page; chats from before it, and chats past that limit, are charged
+at the same rate. Imports are free where your plan says so. An import charge
+isn't refundable once Evo has started reading the chats.
 
 **Cancelling.** You can cancel at any time from Settings. Your plan stays
-active until the end of the month you've paid for, and you won't be charged
+active until the end of the period you've paid for, and you won't be charged
 again.
 
-**Refunds.** Payments are non-refundable, including for partly used months,
-except where the law requires a refund. If something went wrong, contact us
+**Refunds.** Payments are non-refundable, including for partly used months
+or 3-month periods and for import charges, except where the law requires a
+refund. If something went wrong, contact us
 at support@use-evo.com and we'll look at it.
 
 **Failed payments.** If a payment fails, access to paid features pauses until
@@ -54,7 +74,8 @@ test and improve Evo.
 
 You're responsible for your content, and you promise that you have the
 right to use it in Evo. In particular, only import chat exports from your
-own accounts.
+own accounts, and don't alter them (for example, changing the dates of
+conversations) before importing.
 
 What Evo generates for you (plans, lessons, replies) is yours to use. We
 don't claim ownership of it.
@@ -66,7 +87,7 @@ Don't use Evo to:
 - break the law or infringe anyone's rights;
 - create content that is harmful, harassing, sexually exploits anyone, or
   promotes violence;
-- try to get around plan limits, access other people's accounts or data, or
+- try to get around plan limits or charges, access other people's accounts or data, or
   interfere with Evo's servers (for example, overloading them or probing for
   weaknesses);
 - resell Evo or access it by automated means, except as we allow;

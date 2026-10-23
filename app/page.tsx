@@ -91,13 +91,13 @@ export default function EvoLandingPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-8 text-left">
               <div className="rounded-2xl border border-blue-200 bg-white p-8">
-                <h3 className="text-2xl font-bold text-slate-800 mb-3">Structured learning</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-3">Structured Learning</h3>
                 <p className="text-slate-600 leading-relaxed">
                   For when you want to learn about something specific, and learn it fully. That can be a short dive into something you're curious about, or full-length learning to mastery in any subject.
                 </p>
               </div>
               <div className="rounded-2xl border border-blue-200 bg-white p-8">
-                <h3 className="text-2xl font-bold text-slate-800 mb-3">Learning tool</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-3">Curiosity Threads</h3>
                 <p className="text-slate-600 leading-relaxed">
                   For finding curious threads to explore based on what you're already interested in. It takes in all of your previous chats with AI, pulls out everything you've been curious about, and turns it into threads for you to explore.
                 </p>
@@ -211,11 +211,11 @@ export default function EvoLandingPage() {
               </p>
             </div>
 
-            {/* Learning Tool */}
+            {/* Curiosity Threads */}
             <div className="rounded-2xl border border-blue-200 bg-white p-8 lg:p-10">
-              <h3 className="text-3xl font-bold text-slate-800 mb-4">Learning Tool</h3>
+              <h3 className="text-3xl font-bold text-slate-800 mb-4">Curiosity Threads</h3>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Upload your chat history from ChatGPT or Claude. The Learning Tool finds everything you&apos;ve been curious about and builds threads for you to explore. Each curiosity gets many threads, and each thread is full of content.
+                Upload your chat history from ChatGPT or Claude. Curiosity Threads finds everything you&apos;ve been curious about and builds threads for you to explore. Each curiosity gets many threads, and each thread is full of content.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
@@ -246,7 +246,7 @@ export default function EvoLandingPage() {
             <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 lg:p-10 text-white">
               <h3 className="text-3xl font-bold mb-4">Meet Thomas</h3>
               <p className="text-blue-50 leading-relaxed">
-                Evo&apos;s figures each guide a different part of your growth. Thomas is the figure of knowledge, and he delivers your learning in both Structured Learning and the Learning Tool. More figures are coming as Evo grows, including a figure of memory who will help you retain what you learn.
+                Evo&apos;s figures each guide a different part of your growth. Thomas is the figure of knowledge, and he delivers your learning in both Structured Learning and Curiosity Threads. More figures are coming as Evo grows, including a figure of memory who will help you retain what you learn.
               </p>
             </div>
 
